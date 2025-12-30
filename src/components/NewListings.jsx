@@ -73,20 +73,20 @@ const NewListings = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {listings.map((listing) => (
-          <div key={listing.id} className="group cursor-pointer flex items-start gap-4">
+          <div key={listing.id} className="group cursor-pointer flex items-start gap-3 md:gap-4">
             <div className="relative rounded-[8px] overflow-hidden flex-shrink-0">
               <img
                 src={listing.image}
                 alt={listing.title}
-                className="w-[140px] h-[90px] object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-[100px] h-[65px] md:w-[140px] md:h-[90px] object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
-            <div className="flex flex-col gap-1 flex-1">
-              <h3 className="font-inter font-normal text-base text-[#131214] line-clamp-1">{listing.title}</h3>
-              <div className="flex flex-wrap items-center text-sm font-inter font-normal text-[#6E7375] gap-1">
+            <div className="flex flex-col gap-1 flex-1 min-w-0">
+              <h3 className="font-inter font-normal text-sm md:text-base text-[#131214] line-clamp-1">{listing.title}</h3>
+              <div className="flex flex-wrap items-center text-xs md:text-sm font-inter font-normal text-[#6E7375] gap-1">
                 <span>{listing.year}</span>
                 <img src={EllipseIcon} alt="" className="mx-1" />
                 <span>{listing.condition}</span>
@@ -94,7 +94,7 @@ const NewListings = () => {
                 <span>{listing.location}</span>
               </div>
               <div className="mt-1">
-                <span className="font-bold text-[#131214] text-sm">${listing.price}</span>
+                <span className="font-bold text-[#131214] text-xs md:text-sm">${listing.price}</span>
               </div>
             </div>
           </div>

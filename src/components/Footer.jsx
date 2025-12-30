@@ -65,7 +65,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             {/* Logo */}
             <div className="mb-12">
-              <div className="inline-flex items-center gap-3 p-3">
+              <div className="inline-flex items-center gap-3 p-0 md:p-3">
                 <img src={logo} alt="EZ Trade Machinery" className="h-[104px] w-[118px]" />
               </div>
             </div>
@@ -160,20 +160,20 @@ const Footer = () => {
             </div>
 
             {/* Subscribe to Newsletter */}
-            <div className="flex-1 lg:max-w-md overflow-hidden">
+            <div className="w-full lg:flex-1 lg:max-w-md">
               <h3 className="font-inter text-white font-normal text-lg mb-4">Subscribe to Newsletter</h3>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-2 rounded-lg bg-[#FFFFFF1A] text-white placeholder-gray-400 border border-[#FFFFFF33] focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:border-transparent"
+                  className="flex-1 min-w-0 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg bg-[#FFFFFF1A] text-white placeholder-gray-400 border border-[#FFFFFF33] focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:border-transparent"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-[#FFB703] text-gray-900 font-bold rounded-lg hover:bg-[#FFB703]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:ring-offset-2 focus:ring-offset-[#2C2C2C]"
+                  className="px-4 sm:px-6 py-2 bg-[#FFB703] text-gray-900 font-bold text-sm sm:text-base rounded-lg hover:bg-[#FFB703]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:ring-offset-2 focus:ring-offset-[#2C2C2C] whitespace-nowrap flex-shrink-0"
                 >
                   Subscribe
                 </button>
