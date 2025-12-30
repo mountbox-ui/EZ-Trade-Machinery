@@ -15,15 +15,16 @@ const PromoDashboard = () => {
     return (
         <div className="flex-1 space-y-10">
             {/* Promo Banner & Quick Links Row */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <div className="flex flex-col xl:flex-row gap-6">
                 {/* Black Friday Banner */}
-                <div className="xl:col-span-2 bg-[#2C2C2C] rounded-[8px] p-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden min-h-[240px] w-[582px]">
+                <div className="flex-1 bg-[#2C2C2C] rounded-[8px] p-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden min-h-[240px]">
+                    {/* Div 1: Left Content */}
                     <div className="z-10 w-full md:w-auto">
-                        <div className="flex items-center gap-2 text-[#FDBC31] font-400 text-[14px] mb-2 font-['Inter']">
+                        <div className="flex items-center gap-2 text-[#FDBC31] font-400 text-[14px] mb-4 font-['Inter']">
                             <span><img src={Limited} alt="" /></span> LIMITED TIME
                         </div>
                         <h2 className="text-white text-[32px] font-bold mb-2 font-['Plus_Jakarta_Sans']">Black Friday Deals</h2>
-                        <p className="text-[#9BA0A3] mb-6 text-[14px]">Save up to 40% on heavy equipment</p>
+                        <p className="text-[#9BA0A3] mb-8 text-[14px]">Save up to 40% on heavy equipment</p>
 
                         <div className="flex gap-3">
                             {[
@@ -31,16 +32,17 @@ const PromoDashboard = () => {
                                 { val: '45', label: 'Mins' },
                                 { val: '12', label: 'Secs' }
                             ].map((timer) => (
-                                <div key={timer.label} className="bg-[#FDBC31] text-black w-[54px] h-[54px] rounded-[4px] flex flex-col items-center justify-center">
-                                    <span className="text-[18px] font-bold leading-none">{timer.val}</span>
-                                    <span className="text-[10px] font-bold uppercase mt-0.5">{timer.label}</span>
+                                <div key={timer.label} className="bg-[#FDBC31] text-black w-[54px] h-[64px] rounded-[4px] flex flex-col items-center justify-center">
+                                    <span className="text-[20px] font-bold leading-none">{timer.val}</span>
+                                    <span className="text-[10px] font-bold uppercase mt-1">{timer.label}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="z-10 mt-6 md:mt-0">
-                        <button className="bg-[#FDBC31] hover:bg-[#e5a92c] text-black font-bold py-3 px-8 rounded-[40px] transition-all text-[16px]">
+                    {/* Div 2: Right Content */}
+                    <div className="z-10 mt-8 md:mt-0">
+                        <button className="bg-[#FDBC31] hover:bg-[#e5a92c] text-[#1A1C1E] font-bold py-4 px-10 rounded-[40px] transition-all text-[16px]">
                             Shop Deals Now
                         </button>
                     </div>
@@ -50,24 +52,24 @@ const PromoDashboard = () => {
                 </div>
 
                 {/* Info Cards Grid */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xl:w-[480px]">
                     {[
-                        { title: 'Financing', icon: <img src={Finance} alt="" />, color: '#E8F1FF', iconColor: '#3B82F6' },
-                        { title: 'Shipping', icon: <img src={Shipping} alt="" />, color: '#E9FAF0', iconColor: '#10B981' },
-                        { title: 'Deals', icon: <img src={Deals} alt="" />, color: '#FFF1F1', iconColor: '#EF4444' },
-                        { title: 'Auctions', icon: <img src={Auction} alt="" />, color: '#F3E8FF', iconColor: '#A855F7' }
+                        { title: 'Financing', icon: <img src={Finance} alt="" />, color: '#E8F1FF' },
+                        { title: 'Shipping', icon: <img src={Shipping} alt="" />, color: '#E9FAF0' },
+                        { title: 'Deals', icon: <img src={Deals} alt="" />, color: '#FFF1F1' },
+                        { title: 'Auctions', icon: <img src={Auction} alt="" />, color: '#F3E8FF' }
                     ].map((card) => (
                         <div
                             key={card.title}
-                            className="bg-white rounded-[20px] p-5 flex flex-col items-start gap-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer group"
+                            className="bg-white rounded-[8px] p-4 flex items-center gap-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer group h-[112px]"
                         >
                             <div
-                                className="w-[48px] h-[48px] rounded-[14px] flex items-center justify-center text-[20px] transition-transform group-hover:scale-110"
-                                style={{ backgroundColor: card.color, color: card.iconColor }}
+                                className="w-[56px] h-[56px] rounded-[8px] flex items-center justify-center shrink-0 transition-transform group-hover:scale-105"
+                                style={{ backgroundColor: card.color }}
                             >
                                 {card.icon}
                             </div>
-                            <span className="text-[#1A1C1E] font-bold text-[15px] font-['Plus_Jakarta_Sans']">{card.title}</span>
+                            <span className="text-[#1A1C1E] font-bold text-[16px] font-['Plus_Jakarta_Sans']">{card.title}</span>
                         </div>
                     ))}
                 </div>
