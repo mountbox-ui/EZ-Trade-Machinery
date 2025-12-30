@@ -87,7 +87,7 @@ const HeroSlider = () => {
         <button
           type="button"
           onClick={goToPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8 flex items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
+          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
         >
           <span className="sr-only">Previous</span>
           &#8249;
@@ -96,7 +96,7 @@ const HeroSlider = () => {
         <button
           type="button"
           onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 flex items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
+          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
         >
           <span className="sr-only">Next</span>
           &#8250;

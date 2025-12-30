@@ -30,7 +30,7 @@ const filters = [
 const HeroFilter = () => {
   return (
     <section className="w-full">
-      <div className="flex items-start justify-between gap-3 overflow-x-auto pb-2 py-[10px]">
+      <div className="flex items-start justify-between gap-3 overflow-x-auto pb-2 py-[10px] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none">
         {filters.map((filter) => (
           <button
             key={filter.name}

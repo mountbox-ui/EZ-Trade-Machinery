@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#1A1A1A] text-white">
-      {/* Top Bar */}
-      <div className="">
+      {/* Top Bar - Hidden on mobile */}
+      <div className="hidden lg:block border-b border-gray-700">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10 text-sm">
             <div className="flex items-center space-x-4">
@@ -51,38 +51,44 @@ const Navbar = () => {
       {/* Main Header */}
       <div className="bg-[#2C2C2C]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-4 justify-between">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <a href="/" className="flex items-center">
-                <img src={logo} alt="EZ Trade Machinery" className="h-12 w-auto" />
-              </a>
-            </div>
-
-            {/* Search Bar */}
-            <div className="flex h-12 py-1.5 items-center gap-[617px]">
-              <div className="relative w-[550px]">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search equipment, category, brand, or location..."
-                  className="w-full h-12 pt-1 pr-4 pb-1 pl-12 flex items-center rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.10),0_2px_4px_-2px_rgba(0,0,0,0.10)]"
-                />
-                <button
-                  type="button"
-                  className="absolute flex items-center justify-center gap-2 w-[78.031px] h-9 px-4 py-2 right-[6.07px] top-[6px] rounded bg-[#FFB703] text-gray-900 font-medium transition-colors hover:bg-[#FFB703]/90 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
-                >
-                  Search
-                </button>
+          <div className="flex flex-col lg:flex-row items-center gap-4 justify-between">
+            {/* Logo & Search Container */}
+            <div className="flex items-center justify-between w-full lg:w-auto gap-4">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <a href="/" className="flex items-center">
+                  <img src={logo} alt="EZ Trade Machinery" className="h-8 sm:h-10 lg:h-12 w-auto" />
+                </a>
               </div>
+
+              {/* Mobile Profile Icon (Optional if user wanted but let's stick to their request) */}
             </div>
 
-            {/* User Actions */}
-            <div className="flex items-center gap-[34px] flex-shrink-0">
+            {/* Search Bar - Responsive */}
+            <div className="w-full lg:w-[550px] relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search equipment, category..."
+                className="w-full h-11 lg:h-12 pt-1 pr-14 lg:pr-24 pb-1 pl-12 flex items-center rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-sm"
+              />
+              <button
+                type="button"
+                className="absolute flex items-center justify-center gap-2 w-10 lg:w-[78px] h-9 px-2 lg:px-4 py-2 right-1 top-[4px] lg:top-[6px] rounded bg-[#FFB703] text-gray-900 font-medium transition-colors hover:bg-[#FFB703]/90"
+              >
+                <span className="hidden lg:inline">Search</span>
+                <svg className="h-5 w-5 lg:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </div>
+
+            {/* User Actions - Hidden on mobile */}
+            <div className="hidden lg:flex items-center gap-[34px] flex-shrink-0">
               {/* Favorites */}
               <button className="flex flex-col items-center hover:opacity-80 transition-opacity">
                 <img src={favoritesIcon} alt="Favorites" className="h-6 w-6 mb-1" />
@@ -115,24 +121,23 @@ const Navbar = () => {
                   </svg>
                 </div>
               </button>
+
               {/* Sell Equipment Button */}
               <div className="flex-shrink-0">
                 <button
                   type="button"
-                  className="flex w-[162px] h-10 px-6 py-2 justify-center items-center gap-2 rounded bg-[#FFB703] text-gray-900 font-medium transition-colors hover:bg-[#FFB703]/90 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                  className="flex w-[162px] h-10 px-6 py-2 justify-center items-center gap-2 rounded bg-[#FFB703] text-gray-900 font-medium transition-colors"
                 >
                   Sell Equipment
                 </button>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="border-b border-gray-700">
+      {/* Bottom Navigation - Hidden on mobile */}
+      <div className="hidden lg:block border-b border-gray-700">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-12">
             {/* All Categories Menu */}
