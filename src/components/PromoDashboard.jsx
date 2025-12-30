@@ -13,6 +13,7 @@ import Eye from '../assets/Promo-Icons/Eye.svg'
 import YouMayAlsoLike from './YouMayAlsoLike'
 import FeaturedCompanies from './FeaturedCompanies'
 import EquipmentForYou from './EquipmentForYou'
+import NewListings from './NewListings'
 
 const PromoDashboard = () => {
     return (
@@ -161,6 +162,8 @@ const PromoDashboard = () => {
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[100px] font-bold opacity-10 leading-none select-none">$</div>
                 </div>
             </div>
+            {/* New Listings */}
+            <NewListings />
             {/* Equipment for you */}
             <EquipmentForYou />
             {/* Featured Companies */}
