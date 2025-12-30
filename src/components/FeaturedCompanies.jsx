@@ -40,7 +40,7 @@ const FeaturedCompanies = () => {
         <h2 className="font-inter text-2xl font-bold text-[#000000]">Featured Companies</h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
         {companies.map((company) => (
           <div
             key={company.id}
@@ -50,7 +50,7 @@ const FeaturedCompanies = () => {
               <div className="md:w-[83px] md:h-[83px] w-[60px] h-[60px] bg-white rounded-lg flex items-center justify-center p-2">
                 <img src={company.logo} alt={company.name} className="w-full h-full object-contain" />
               </div>
-              
+
               <div className="flex-1">
                 <h3 className="font-inter font-normal text-base text-[#131214] mb-1">
                   {company.name}

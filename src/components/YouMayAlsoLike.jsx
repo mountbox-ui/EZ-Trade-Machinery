@@ -51,7 +51,7 @@ const YouMayAlsoLike = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {items.map((item) => (
           <div key={item.id} className="group cursor-pointer">
             <div className="relative rounded-[8px] overflow-hidden  mb-3">
