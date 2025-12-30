@@ -13,6 +13,10 @@ import Eye from '../assets/Promo-Icons/Eye.svg'
 import FinanceB from '../assets/Promo-Icons/FinanceB.svg'
 import ShippingB from '../assets/Promo-Icons/ShippingB.svg'
 import ShortVideos from './ShortVideos'
+import NewListings from './NewListings'
+import EquipmentForYou from './EquipmentForYou'
+import FeaturedCompanies from './FeaturedCompanies'
+import YouMayAlsoLike from './YouMayAlsoLike'
 
 const PromoDashboard = () => {
     return (
@@ -199,8 +203,17 @@ const PromoDashboard = () => {
                     <div ><img src={FinanceB} alt="" /></div>
                 </div>
             </div>
-
+            {/* Short Videos */}
             <ShortVideos />
+            {/* New Listings */}
+            <NewListings />
+            {/* Equipment for you */}
+            <EquipmentForYou />
+            {/* Featured Companies */}
+            <FeaturedCompanies />
+            {/* You May Also Like */}
+            <YouMayAlsoLike />
+
 
         </div>
     )

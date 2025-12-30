@@ -5,6 +5,7 @@ import Auction from './components/Auction'
 import CategorySidebar from './components/CategorySidebar'
 import PromoDashboard from './components/PromoDashboard'
 import MobileBottomNav from './components/MobileBottomNav'
+import Footer from './components/Footer'
 
 function App() {
   const navLinks = [
@@ -39,6 +40,7 @@ function App() {
 
 
       </main>
+      <Footer />
 
       <MobileBottomNav navLinks={navLinks} topLinks={topLinks} />
     </div>
