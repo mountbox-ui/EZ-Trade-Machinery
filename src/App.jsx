@@ -4,13 +4,30 @@ import HeroFilter from './components/HeroFilter'
 import Auction from './components/Auction'
 import CategorySidebar from './components/CategorySidebar'
 import PromoDashboard from './components/PromoDashboard'
+import MobileBottomNav from './components/MobileBottomNav'
 
 function App() {
+  const navLinks = [
+    'Home',
+    'Auctions',
+    'Categories',
+    'Deals',
+    'Want to Buy',
+    'Financing',
+    'Shipping'
+  ]
+
+  const topLinks = [
+    'Track Order',
+    'Help & Support',
+    'Get Verified'
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#F8F9FA]">
       <Navbar />
 
-      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 mb-20 lg:mb-0">
         <HeroSlider />
         <HeroFilter />
         <Auction />
@@ -20,6 +37,8 @@ function App() {
           <PromoDashboard />
         </div>
       </main>
+
+      <MobileBottomNav navLinks={navLinks} topLinks={topLinks} />
     </div>
   )
 }
