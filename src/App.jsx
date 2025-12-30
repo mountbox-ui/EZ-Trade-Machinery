@@ -4,6 +4,7 @@ import HeroFilter from './components/HeroFilter'
 import Auction from './components/Auction'
 import CategorySidebar from './components/CategorySidebar'
 import PromoDashboard from './components/PromoDashboard'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
           <CategorySidebar />
           <PromoDashboard />
         </div>
+
+        
       </main>
+
+      <Footer />
     </div>
   )
 }

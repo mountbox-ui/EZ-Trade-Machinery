@@ -10,6 +10,9 @@ import Shipping from '../assets/Promo-Icons/Shipping.svg'
 import Deals from '../assets/Promo-Icons/Deals.svg'
 import Auction from '../assets/Promo-Icons/Auction.svg'
 import Eye from '../assets/Promo-Icons/Eye.svg'
+import YouMayAlsoLike from './YouMayAlsoLike'
+import FeaturedCompanies from './FeaturedCompanies'
+import EquipmentForYou from './EquipmentForYou'
 
 const PromoDashboard = () => {
     return (
@@ -158,6 +161,13 @@ const PromoDashboard = () => {
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[100px] font-bold opacity-10 leading-none select-none">$</div>
                 </div>
             </div>
+            {/* Equipment for you */}
+            <EquipmentForYou />
+            {/* Featured Companies */}
+             <FeaturedCompanies />
+            {/* You May Also Like */}
+            <YouMayAlsoLike />
+           
         </div>
     )
 }
