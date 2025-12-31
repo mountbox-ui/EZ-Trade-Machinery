@@ -67,24 +67,24 @@ const auctions = [
 
 const Auction = () => {
     return (
-        <section className="w-full">
-            <div className="flex items-center justify-between mb-6">
+        <section className="w-full mt-10">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div className="flex items-center gap-2">
                     {/* Stopwatch Icon */}
-                    <img src={clockRed} alt="Clock" />
-                    <h2 className="text-xl font-bold text-gray-900">Auctions Closing Soon</h2>
+                    <img src={clockRed} alt="Clock" className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <h2 className="text-[16px] md:text-[18px] font-bold text-gray-900 font-inter">Auctions Closing Soon</h2>
                 </div>
-                <button className="text-sm font-medium text-gray-600 flex items-center gap-1 hover:text-gray-900">
+                <button className="text-[13px] sm:text-sm font-medium text-gray-600 flex items-center gap-1 hover:text-gray-900 font-inter">
                     See all
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="14" height="14" className="sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 18l6-6-6-6" />
                     </svg>
                 </button>
             </div>
 
-            <div className="flex overflow-x-auto gap-6 pb-6 lg:grid lg:grid-cols-3 xl:grid-cols-5 lg:gap-6 xl:gap-[40px] lg:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none">
+            <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6 lg:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none">
                 {auctions.map((item) => (
-                    <div key={item.id} className="flex flex-col gap-3 min-w-[280px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink b-card-hover h-full">
+                    <div key={item.id} className="flex flex-col gap-3 min-w-[250px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink md:b-card-hover h-full hover:b-card-hover-none">
                         <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 group">
                             <img
                                 src={item.image}
@@ -122,7 +122,7 @@ const Auction = () => {
                             </div>
                         </div>
 
-                        <button className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 text-gray-900 font-bold py-[8px] rounded-full text-sm transition-colors mt-auto">
+                        <button className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 active:scale-[0.98] text-gray-900 font-bold py-[8px] rounded-full text-sm transition-all mt-auto shadow-sm">
                             Place bid
                         </button>
                     </div>

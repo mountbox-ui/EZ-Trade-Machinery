@@ -23,11 +23,11 @@ import ShippingWhite from '../assets/Promo-Icons/ShippingWhite.svg'
 
 const PromoDashboard = () => {
     return (
-        <div className="flex-1 space-y-10 overflow-hidden">
+        <div className="flex-1 space-y-10 lg:space-y-10 overflow-hidden">
             {/* Promo Banner & Quick Links Row */}
-            <div className="flex flex-col xl:flex-row gap-6">
+            <div className="flex flex-col xl:flex-row gap-6 mt-[20px]">
                 {/* Black Friday Banner */}
-                <div className="order-2 xl:order-1 flex-1 bg-[#2C2C2C] rounded-[24px] xl:rounded-[8px] p-6 sm:p-[24px] flex flex-col xl:flex-row items-center justify-between relative overflow-hidden min-h-[360px] xl:min-h-[240px]">
+                <div className="order-2 xl:order-1 flex-1 bg-[#2C2C2C] rounded-[24px] xl:rounded-[8px] p-6 sm:p-[24px] flex flex-col xl:flex-row items-center justify-between relative overflow-hidden min-h-[240px] xl:min-h-[240px]">
                     {/* Div 1: Left Content */}
                     <div className="z-10 w-full xl:w-auto flex flex-col text-left">
                         <div className="flex items-center gap-2 text-[#FDBC31] font-bold text-[14px] mb-4 font-inter">
@@ -83,11 +83,11 @@ const PromoDashboard = () => {
             </div>
 
             {/* Hot Deals Section */}
-            <div>
-                <div className="flex items-center justify-between mb-6">
+            <div className="mt-10">
+                <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                         <img src={DealsGreen} alt="" />
-                        <h2 className="text-[24px] font-bold text-[#1A1C1E] font-inter">Hot Deals</h2>
+                        <h2 className="text-[16px] md:text-[18px] font-bold text-[#1A1C1E] font-inter">Hot Deals</h2>
                     </div>
                     <a href="#" className="text-[14px] text-[#2C2C2C] font-500 font-inter flex items-center gap-1 hover:underline">
                         See all
@@ -96,14 +96,14 @@ const PromoDashboard = () => {
                         </svg>
                     </a>
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                     {[
                         { title: 'John Deere 850K Dozer...', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-29%', img: JohnDeere },
                         { title: '2020 Komatsu D65 Dozer', year: '2001', location: 'Texas, USA', price: '35,000', discount: '-24%', img: Komatsu },
                         { title: '2021 CAT 950M Wheel Loader', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-39%', img: Caterpillar },
                         { title: 'CAT 320D Excavator...', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-13%', img: Volvo }
                     ].map((deal, idx) => (
-                        <div key={idx} className="group b-card-hover">
+                        <div key={idx} className="grou md:b-card-hover hover:b-card-hover-none">
                             <div className="relative aspect-[163/194] xl:aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 mb-3">
                                 <img src={deal.img} alt={deal.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                                 <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-normal px-2 py-1 rounded-[16px]">{deal.discount}</div>
@@ -121,10 +121,10 @@ const PromoDashboard = () => {
             </div>
 
             {/* Pick up where you left off */}
-            <div>
-                <div className="flex items-center gap-2 mb-6">
+            <div className="mt-10">
+                <div className="flex items-center gap-2 mb-4">
                     <img src={Eye} alt="" />
-                    <h2 className="text-[24px] font-bold text-[#1A1C1E] font-inter">Pick up where you left off</h2>
+                    <h2 className="text-[16px] md:text-[18px] font-bold text-[#1A1C1E] font-inter">Pick up where you left off</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
                     {[
@@ -135,7 +135,7 @@ const PromoDashboard = () => {
                         { title: 'Volvo EC950F Crawler...', price: '1800', img: Volvo },
                         { title: 'Komatsu PC360LCI-11...', price: '1400', img: Komatsu }
                     ].map((item, idx) => (
-                        <div key={idx} className="group b-card-hover">
+                        <div key={idx} className="group md:b-card-hover hover:b-card-hover-none">
                             <div className="aspect-[1/1] rounded-[8px] overflow-hidden bg-gray-100 mb-2">
                                 <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                             </div>
@@ -148,7 +148,7 @@ const PromoDashboard = () => {
 
             {/* Bottom Service Banners */}
             <div className="w-full overflow-hidden">
-                <div className="flex overflow-x-auto gap-6 pb-4 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
+                <div className="flex overflow-x-auto gap-[12px] md:gap-6 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
                     <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
                         <div className="z-10">
                             <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">

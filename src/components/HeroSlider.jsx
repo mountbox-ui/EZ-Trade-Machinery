@@ -54,7 +54,7 @@ const HeroSlider = () => {
   const activeSlide = slides[currentIndex]
 
   return (
-    <section className="w-full flex justify-center py-6">
+    <section className="w-full flex justify-center md:pt-[40px] pt-4 pb-4">
       <div className="relative w-full overflow-hidden rounded-md">
         {/* Background image - content is already in the images */}
         <div

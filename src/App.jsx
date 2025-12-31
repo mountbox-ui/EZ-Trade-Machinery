@@ -28,12 +28,12 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
 
-      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 mb-20 lg:mb-0">
+      <main className="max-w-[1440px] mx-auto px-[8px] lg:px-8 space-y-4 lg:space-y-10 mb-20 lg:mb-0">
         <HeroSlider />
         <HeroFilter />
         <Auction />
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 w-full">
           <CategorySidebar />
           <PromoDashboard />
         </div>

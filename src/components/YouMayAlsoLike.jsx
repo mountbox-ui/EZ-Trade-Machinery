@@ -44,16 +44,16 @@ const YouMayAlsoLike = () => {
 
   return (
     <section className="w-full">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <img src={HeartIcon} alt="" className="w-6 h-6" />
-          <h2 className="font-inter text-2xl font-bold text-[#000000]">You may also like</h2>
+          <h2 className="font-inter text-[16px] md:text-[18px] font-bold text-[#000000]">You may also like</h2>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
         {items.map((item) => (
-          <div key={item.id} className="group cursor-pointer b-card-hover h-full">
+          <div key={item.id} className="group cursor-pointer md:b-card-hover hover:b-card-hover-none h-full">
             <div className="relative rounded-[8px] overflow-hidden  mb-3">
               <img
                 src={item.image}

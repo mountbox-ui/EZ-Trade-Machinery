@@ -44,16 +44,16 @@ const EquipmentForYou = () => {
 
   return (
     <section className="w-full">
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-4">
         <div className="flex items-center gap-2">
           <img src={StarIcon} alt="" className="w-6 h-6" />
-          <h2 className="font-inter text-2xl font-bold text-[#000000]">Equipment for you</h2>
+          <h2 className="font-inter text-[16px] md:text-[18px] font-bold text-[#000000]">Equipment for you</h2>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {items.map((item) => (
-          <div key={item.id} className="group b-card-hover">
+          <div key={item.id} className="group md:b-card-hover hover:b-card-hover-none">
             <div className="relative rounded-[8px] overflow-hidden mb-3">
               <img
                 src={item.image}
@@ -62,7 +62,7 @@ const EquipmentForYou = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col md:gap-1">
               <h3 className="font-inter font-bold text-base text-[#131214] line-clamp-1">{item.title}</h3>
               <div className="flex flex-wrap items-center text-sm font-inter font-normal text-[#6E7375] gap-1">
                 <span>{item.year}</span>

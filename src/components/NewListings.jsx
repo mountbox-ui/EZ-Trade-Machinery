@@ -69,13 +69,13 @@ const NewListings = () => {
             <div className="flex items-center mb-6">
                 <div className="flex items-center gap-2">
                     <img src={BlinkIcon} alt="" className="w-6 h-6" />
-                    <h2 className="font-inter text-2xl font-bold text-[#000000]">New listings</h2>
+                    <h2 className="font-inter text-[16px] md:text-[18px] font-bold text-[#000000]">New listings</h2>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
                 {listings.map((listing) => (
-                    <div key={listing.id} className="group flex items-start gap-4 b-card-hover">
+                    <div key={listing.id} className="group flex items-start gap-4 md:b-card-hover hover:b-card-hover-none">
                         <div className="relative rounded-[8px] overflow-hidden flex-shrink-0">
                             <img
                                 src={listing.image}
@@ -84,7 +84,7 @@ const NewListings = () => {
                             />
                         </div>
 
-                        <div className="flex flex-col gap-1 flex-1">
+                        <div className="flex flex-col gap-0 md:gap-1 flex-1">
                             <h3 className="font-inter font-normal text-base text-[#131214] line-clamp-1">{listing.title}</h3>
                             <div className="flex flex-wrap items-center text-sm font-inter font-normal text-[#6E7375] gap-1">
                                 <span>{listing.year}</span>

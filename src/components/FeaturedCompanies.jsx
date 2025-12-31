@@ -35,16 +35,16 @@ const FeaturedCompanies = () => {
 
   return (
     <section className="w-full">
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-4">
         <img src={featuredIcon} alt="" className="w-5 h-5" />
-        <h2 className="font-inter text-2xl font-bold text-[#000000]">Featured Companies</h2>
+        <h2 className="font-inter text-[16px] md:text-[18px] font-bold text-[#000000]">Featured Companies</h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
         {companies.map((company) => (
           <div
             key={company.id}
-            className="bg-white border border-[#0000001A] rounded-[4px] p-6 flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer"
+            className="bg-white border border-[#0000001A] rounded-[4px] p-2 md:p-6 flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer"
           >
             <div className="flex items-center gap-4 flex-1">
               <div className="md:w-[83px] md:h-[83px] w-[60px] h-[60px] bg-white rounded-lg flex items-center justify-center p-2">
