@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import banner1 from '../assets/Banner-Img/Banner-1.jpg'
+import MobileBanner1 from '../assets/Banner-Img/Mobile-Banner-1.jpg'
 
 // import banner3 from '../assets/Banner-Img/Banner-3.jpg'
 
@@ -11,6 +12,7 @@ const slides = [
     subtitle: 'AND SUPPLY',
     description: 'CONSTRUCTION MATERIALS',
     imageUrl: banner1,
+    mobileImageUrl: MobileBanner1,
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const slides = [
     subtitle: 'ACROSS THE GLOBE',
     description: 'TRUSTED TRADERS & VERIFIED DEALERS',
     imageUrl: banner1,
+    mobileImageUrl: MobileBanner1,
   },
   {
     id: 3,
@@ -27,6 +30,7 @@ const slides = [
     subtitle: 'NATIONWIDE SUPPORT',
     description: 'GET EQUIPMENT WHEREVER YOU OPERATE',
     imageUrl: banner1,
+    mobileImageUrl: MobileBanner1,
   },
 ]
 
@@ -89,8 +93,17 @@ const HeroSlider = () => {
         onTouchEnd={onTouchEnd}
       >
         {/* Background image - content is already in the images */}
+        {/* Mobile View */}
         <div
-          className="h-[260px] sm:h-[280px] md:h-[320px] lg:h-[360px] bg-cover bg-center transition-all duration-500 ease-in-out"
+          className="block md:hidden h-[210px] md:h-[280px] bg-cover bg-center transition-all duration-500 ease-in-out"
+          style={{
+            backgroundImage: `url(${activeSlide.mobileImageUrl || activeSlide.imageUrl})`,
+          }}
+        />
+
+        {/* Desktop View */}
+        <div
+          className="hidden md:block md:h-[320px] lg:h-[360px] bg-cover bg-center transition-all duration-500 ease-in-out"
           style={{
             backgroundImage: `url(${activeSlide.imageUrl})`,
           }}
@@ -137,13 +150,13 @@ const HeroSlider = () => {
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 md:hidden">
+        <div className="absolute bottom-[5px] left-1/2 -translate-x-1/2 flex gap-2 md:hidden pt-4">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
               onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all ${index === currentIndex ? 'w-6 bg-[#FFB703]' : 'w-2 bg-white/60'
+              className={`h-2 rounded-full transition-all ${index === currentIndex ? 'w-6 bg-[#FFB703]' : 'w-2 bg-[#D1D5DC]'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
