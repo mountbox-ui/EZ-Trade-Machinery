@@ -95,7 +95,7 @@ const HeroSlider = () => {
         {/* Background image - content is already in the images */}
         {/* Mobile View */}
         <div
-          className="block md:hidden h-[210px] md:h-[280px] bg-cover bg-center transition-all duration-500 ease-in-out"
+          className="block md:hidden h-[205px] md:h-[280px] bg-cover bg-center transition-all duration-500 ease-in-out"
           style={{
             backgroundImage: `url(${activeSlide.mobileImageUrl || activeSlide.imageUrl})`,
           }}
