@@ -20,7 +20,7 @@ import YouMayAlsoLike from './YouMayAlsoLike'
 
 const PromoDashboard = () => {
     return (
-        <div className="flex-1 space-y-10">
+        <div className="flex-1 space-y-10 overflow-hidden">
             {/* Promo Banner & Quick Links Row */}
             <div className="flex flex-col xl:flex-row gap-6">
                 {/* Black Friday Banner */}
@@ -154,53 +154,55 @@ const PromoDashboard = () => {
             </div>
 
             {/* Bottom Service Banners */}
-            <div className="flex overflow-x-auto gap-6 pb-4 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
-                <div className="min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
-                    <div className="z-10">
-                        <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">
-                            <div
-                                className="w-5 h-5 bg-white"
-                                style={{
-                                    maskImage: `url(${Shipping})`,
-                                    WebkitMaskImage: `url(${Shipping})`,
-                                    maskRepeat: 'no-repeat',
-                                    WebkitMaskRepeat: 'no-repeat',
-                                    maskSize: 'contain',
-                                    WebkitMaskSize: 'contain'
-                                }}
-                            /> Shipping Services
+            <div className="w-full overflow-hidden">
+                <div className="flex overflow-x-auto gap-6 pb-4 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
+                    <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
+                        <div className="z-10">
+                            <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">
+                                <div
+                                    className="w-5 h-5 bg-white"
+                                    style={{
+                                        maskImage: `url(${Shipping})`,
+                                        WebkitMaskImage: `url(${Shipping})`,
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskSize: 'contain',
+                                        WebkitMaskSize: 'contain'
+                                    }}
+                                /> Shipping Services
+                            </div>
+                            <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
+                            <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
+                            <div className="flex gap-2">
+                                <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500">Domestic</button>
+                                <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20">International</button>
+                            </div>
                         </div>
-                        <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
-                        <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
-                        <div className="flex gap-2">
-                            <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500">Domestic</button>
-                            <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20">International</button>
-                        </div>
+                        <div><img src={ShippingB} alt="" /></div>
                     </div>
-                    <div><img src={ShippingB} alt="" /></div>
-                </div>
 
-                <div className="min-w-[90vw] md:min-w-0 snap-center bg-[#3A3B5E] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
-                    <div className="z-10">
-                        <div className="flex items-center gap-2 text-[12px] font-400 opacity-80 mb-2">
-                            <div
-                                className="w-5 h-5 bg-white"
-                                style={{
-                                    maskImage: `url(${Finance})`,
-                                    WebkitMaskImage: `url(${Finance})`,
-                                    maskRepeat: 'no-repeat',
-                                    WebkitMaskRepeat: 'no-repeat',
-                                    maskSize: 'contain',
-                                    WebkitMaskSize: 'contain'
-                                }}
-                            /> Financing Available
+                    <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#3A3B5E] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
+                        <div className="z-10">
+                            <div className="flex items-center gap-2 text-[12px] font-400 opacity-80 mb-2">
+                                <div
+                                    className="w-5 h-5 bg-white"
+                                    style={{
+                                        maskImage: `url(${Finance})`,
+                                        WebkitMaskImage: `url(${Finance})`,
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskSize: 'contain',
+                                        WebkitMaskSize: 'contain'
+                                    }}
+                                /> Financing Available
+                            </div>
+                            <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
+                            <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
+                            <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-bold">Learn More</button>
                         </div>
-                        <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
-                        <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
-                        <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-bold">Learn More</button>
+                        {/* Decorative $ sign */}
+                        <div ><img src={FinanceB} alt="" /></div>
                     </div>
-                    {/* Decorative $ sign */}
-                    <div ><img src={FinanceB} alt="" /></div>
                 </div>
             </div>
             {/* Short Videos */}

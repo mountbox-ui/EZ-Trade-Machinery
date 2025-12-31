@@ -29,8 +29,8 @@ const ShortVideos = () => {
                             {/* Gradient overlay for better text contrast if needed */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
-                        <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-0.5 line-clamp-1 font-['Plus_Jakarta_Sans'] leading-tight">{video.title}</h3>
-                        <p className="text-[12px] text-[#6E7375] font-['Plus_Jakarta_Sans']">{video.views}</p>
+                        <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-0.5 line-clamp-1 font-inter leading-tight">{video.title}</h3>
+                        <p className="text-[12px] text-[#6E7375] font-inter">{video.views}</p>
                     </div>
                 ))}
             </div>
