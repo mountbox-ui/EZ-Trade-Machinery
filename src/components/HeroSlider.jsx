@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import banner1 from '../assets/Banner-Img/Banner-1.jpg'
 
 // import banner3 from '../assets/Banner-Img/Banner-3.jpg'
@@ -34,6 +34,11 @@ const AUTO_SLIDE_INTERVAL = 6000
 
 const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const touchStart = useRef(null)
+  const touchEnd = useRef(null)
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 50
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,14 +56,41 @@ const HeroSlider = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length)
   }
 
+  const onTouchStart = (e) => {
+    touchEnd.current = null // otherwise the swipe area might be too small
+    touchStart.current = e.targetTouches[0].clientX
+  }
+
+  const onTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return
+    const distance = touchStart.current - touchEnd.current
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe) {
+      goToNext()
+    } else if (isRightSwipe) {
+      goToPrev()
+    }
+  }
+
   const activeSlide = slides[currentIndex]
 
   return (
     <section className="w-full flex justify-center md:pt-[40px] pt-4 pb-4">
-      <div className="relative w-full overflow-hidden rounded-md">
+      <div
+        className="relative w-full overflow-hidden rounded-md"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         {/* Background image - content is already in the images */}
         <div
-          className="h-[260px] sm:h-[280px] md:h-[320px] lg:h-[360px] bg-cover bg-center"
+          className="h-[260px] sm:h-[280px] md:h-[320px] lg:h-[360px] bg-cover bg-center transition-all duration-500 ease-in-out"
           style={{
             backgroundImage: `url(${activeSlide.imageUrl})`,
           }}
