@@ -17,6 +17,9 @@ import NewListings from './NewListings'
 import EquipmentForYou from './EquipmentForYou'
 import FeaturedCompanies from './FeaturedCompanies'
 import YouMayAlsoLike from './YouMayAlsoLike'
+import DealsGreen from '../assets/Promo-Icons/DealsGreen.svg'
+import FinanceWhite from '../assets/Promo-Icons/FinanceWhite.svg'
+import ShippingWhite from '../assets/Promo-Icons/ShippingWhite.svg'
 
 const PromoDashboard = () => {
     return (
@@ -83,17 +86,7 @@ const PromoDashboard = () => {
             <div>
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
-                        <div
-                            className="w-5 h-5 bg-[#00A63E]"
-                            style={{
-                                maskImage: `url(${Deals})`,
-                                WebkitMaskImage: `url(${Deals})`,
-                                maskRepeat: 'no-repeat',
-                                WebkitMaskRepeat: 'no-repeat',
-                                maskSize: 'contain',
-                                WebkitMaskSize: 'contain'
-                            }}
-                        />
+                        <img src={DealsGreen} alt="" />
                         <h2 className="text-[24px] font-bold text-[#1A1C1E] font-inter">Hot Deals</h2>
                     </div>
                     <a href="#" className="text-[14px] text-[#2C2C2C] font-500 font-inter flex items-center gap-1 hover:underline">
@@ -159,17 +152,8 @@ const PromoDashboard = () => {
                     <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
                         <div className="z-10">
                             <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">
-                                <div
-                                    className="w-5 h-5 bg-white"
-                                    style={{
-                                        maskImage: `url(${Shipping})`,
-                                        WebkitMaskImage: `url(${Shipping})`,
-                                        maskRepeat: 'no-repeat',
-                                        WebkitMaskRepeat: 'no-repeat',
-                                        maskSize: 'contain',
-                                        WebkitMaskSize: 'contain'
-                                    }}
-                                /> Shipping Services
+                                <img src={ShippingWhite} alt="" />
+                                Shipping Services
                             </div>
                             <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
                             <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
@@ -183,18 +167,9 @@ const PromoDashboard = () => {
 
                     <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#3A3B5E] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
                         <div className="z-10">
-                            <div className="flex items-center gap-2 text-[12px] font-400 opacity-80 mb-2">
-                                <div
-                                    className="w-5 h-5 bg-white"
-                                    style={{
-                                        maskImage: `url(${Finance})`,
-                                        WebkitMaskImage: `url(${Finance})`,
-                                        maskRepeat: 'no-repeat',
-                                        WebkitMaskRepeat: 'no-repeat',
-                                        maskSize: 'contain',
-                                        WebkitMaskSize: 'contain'
-                                    }}
-                                /> Financing Available
+                            <div className="flex items-center gap-2 text-[12px] font-400 text-white/80 mb-2">
+                                <img src={FinanceWhite} alt="" />
+                                Financing Available
                             </div>
                             <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
                             <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
