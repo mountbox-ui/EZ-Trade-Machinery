@@ -205,37 +205,28 @@ const Navbar = () => {
                   >
                     <MenuItems static className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#2C2C2C] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-gray-700">
                       <MenuItem>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
-                              }`}
-                          >
-                            My Orders
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#FFB703] hover:text-gray-900 transition-colors"
+                        >
+                          My Orders
+                        </a>
                       </MenuItem>
                       <MenuItem>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
-                              }`}
-                          >
-                            Help
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#FFB703] hover:text-gray-900 transition-colors"
+                        >
+                          Help
+                        </a>
                       </MenuItem>
                       <div className="border-t border-gray-700 my-1"></div>
                       <MenuItem>
-                        {({ active }) => (
-                          <button
-                            className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-red-500 text-white' : 'text-red-400'
-                              }`}
-                          >
-                            Logout
-                          </button>
-                        )}
+                        <button
+                          className="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500 hover:text-white transition-colors"
+                        >
+                          Logout
+                        </button>
                       </MenuItem>
                     </MenuItems>
                   </Transition>
@@ -316,37 +307,28 @@ const Navbar = () => {
                   >
                     <MenuItems static className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#2C2C2C] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-gray-700">
                       <MenuItem>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900 hover:bg-[#FFB703]' : 'text-gray-200'
-                              }`}
-                          >
-                            My Orders
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#FFB703] hover:text-gray-900 transition-colors"
+                        >
+                          My Orders
+                        </a>
                       </MenuItem>
                       <MenuItem>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
-                              }`}
-                          >
-                            Help
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#FFB703] hover:text-gray-900 transition-colors"
+                        >
+                          Help
+                        </a>
                       </MenuItem>
                       <div className="border-t border-gray-700 my-1"></div>
                       <MenuItem>
-                        {({ active }) => (
-                          <button
-                            className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-red-500 text-white' : 'text-red-400'
-                              }`}
-                          >
-                            Logout
-                          </button>
-                        )}
+                        <button
+                          className="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500 hover:text-white transition-colors"
+                        >
+                          Logout
+                        </button>
                       </MenuItem>
                     </MenuItems>
                   </Transition>
