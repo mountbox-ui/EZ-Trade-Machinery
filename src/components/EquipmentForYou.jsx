@@ -53,7 +53,7 @@ const EquipmentForYou = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {items.map((item) => (
-          <div key={item.id} className="group cursor-pointer">
+          <div key={item.id} className="group b-card-hover">
             <div className="relative rounded-[8px] overflow-hidden mb-3">
               <img
                 src={item.image}

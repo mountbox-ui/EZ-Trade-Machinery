@@ -110,10 +110,10 @@ const PromoDashboard = () => {
                         { title: '2021 CAT 950M Wheel Loader', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-39%', img: Caterpillar },
                         { title: 'CAT 320D Excavator...', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-13%', img: Volvo }
                     ].map((deal, idx) => (
-                        <div key={idx} className="group cursor-pointer">
+                        <div key={idx} className="group b-card-hover">
                             <div className="relative aspect-[163/194] xl:aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 mb-3">
                                 <img src={deal.img} alt={deal.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                                <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-bold px-2 py-1 rounded-[16px]">{deal.discount}</div>
+                                <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-normal px-2 py-1 rounded-[16px]">{deal.discount}</div>
                             </div>
                             <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-1 line-clamp-1">{deal.title}</h3>
                             <div className="flex items-center gap-1 text-[12px] text-[#6E7375] mb-1">
@@ -142,7 +142,7 @@ const PromoDashboard = () => {
                         { title: 'Volvo EC950F Crawler...', price: '1800', img: Volvo },
                         { title: 'Komatsu PC360LCI-11...', price: '1400', img: Komatsu }
                     ].map((item, idx) => (
-                        <div key={idx} className="group cursor-pointer">
+                        <div key={idx} className="group b-card-hover">
                             <div className="aspect-[1/1] rounded-[8px] overflow-hidden bg-gray-100 mb-2">
                                 <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                             </div>

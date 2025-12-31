@@ -19,7 +19,7 @@ const ShortVideos = () => {
             <h2 className="text-[24px] font-bold text-[#1A1C1E] font-inter mb-6 px-1 lg:px-0">Short videos</h2>
             <div className="flex overflow-x-auto gap-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
                 {videos.map((video, idx) => (
-                    <div key={idx} className="min-w-[140px] sm:min-w-[163px] snap-start group cursor-pointer">
+                    <div key={idx} className="min-w-[140px] sm:min-w-[163px] snap-start group b-card-hover">
                         <div className="relative aspect-[163/240] rounded-[12px] overflow-hidden bg-gray-100 mb-3">
                             <img
                                 src={video.img}
