@@ -6,5 +6,12 @@
   body {
     font-family: 'Inter', sans-serif;
   }
-}
 
+  .b-card-hover {
+    @apply transition-all duration-300 ease-out p-[10px] rounded-[12px] border border-transparent cursor-pointer;
+  }
+
+  .b-card-hover:hover {
+    @apply bg-white -translate-y-0 transform-none scale-[1.03] z-10 bg-[#ebebeb];
+  }
+}

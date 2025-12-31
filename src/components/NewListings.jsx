@@ -75,7 +75,7 @@ const NewListings = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
                 {listings.map((listing) => (
-                    <div key={listing.id} className="group cursor-pointer flex items-start gap-4">
+                    <div key={listing.id} className="group flex items-start gap-4 b-card-hover">
                         <div className="relative rounded-[8px] overflow-hidden flex-shrink-0">
                             <img
                                 src={listing.image}

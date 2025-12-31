@@ -40,7 +40,7 @@ const HeroFilter = () => {
             <div className="h-[48px] w-[48px] rounded-[10px] bg-[#FFF3D9] flex items-center justify-center shadow-sm">
               <img src={filter.icon} alt={filter.name} className="h-8 w-8 object-contain" />
             </div>
-            <span className="self-stretch text-center leading-[16px] text-[#6E7375] font-['Plus_Jakarta_Sans'] text-[14px] font-[500] tracking-[0]">
+            <span className="self-stretch text-center leading-[16px] text-[#6E7375] font-inter text-[14px] font-[500] tracking-[0]">
               {filter.name}
             </span>
           </button>

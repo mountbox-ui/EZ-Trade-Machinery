@@ -143,9 +143,9 @@ const Footer = () => {
         <div className="border-t border-[#FFFFFF1A] pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             {/* Follow Us */}
-            <div>
+            <div className="w-full lg:w-auto">
               <h3 className="font-inter text-white font-medium text-lg mb-4">Follow Us</h3>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
@@ -153,14 +153,14 @@ const Footer = () => {
                     className="w-10 h-10 rounded-full bg-[#FFFFFF1A] flex items-center justify-center text-white hover:bg-[#FFB703] hover:text-gray-900 transition-colors"
                     aria-label={social.name}
                   >
-                    <img src={social.icon} alt={social.name} className="w-5 h-5 color-white" />
+                    <img src={social.icon} alt={social.name} className="w-5 h-5" />
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Subscribe to Newsletter */}
-            <div className="w-full lg:flex-1 lg:max-w-md">
+            <div className="w-full lg:max-w-md">
               <h3 className="font-inter text-white font-normal text-lg mb-4">Subscribe to Newsletter</h3>
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
                 <input
@@ -168,12 +168,12 @@ const Footer = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg bg-[#FFFFFF1A] text-white placeholder-gray-400 border border-[#FFFFFF33] focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:border-transparent"
+                  className="w-full sm:flex-1 px-4 py-2 rounded-lg bg-[#FFFFFF1A] text-white placeholder-gray-400 border border-[#FFFFFF33] focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:border-transparent"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-4 sm:px-6 py-2 bg-[#FFB703] text-gray-900 font-bold text-sm sm:text-base rounded-lg hover:bg-[#FFB703]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:ring-offset-2 focus:ring-offset-[#2C2C2C] whitespace-nowrap flex-shrink-0"
+                  className="w-full sm:w-auto px-6 py-2 bg-[#FFB703] text-gray-900 font-bold rounded-lg hover:bg-[#FFB703]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:ring-offset-2 focus:ring-offset-[#2C2C2C]"
                 >
                   Subscribe
                 </button>
@@ -182,20 +182,15 @@ const Footer = () => {
           </div>
 
           {/* Copyright & Legal Links */}
-          <div className="mt-8 pt-6 border-t border-[#FFFFFF1A] flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-[#99A1AF] text-sm font-inter font-medium">
+          <div className="mt-8 pt-6 border-t border-[#FFFFFF1A] flex flex-col items-center lg:flex-row justify-between gap-6">
+            <p className="text-[#99A1AF] text-sm font-inter font-medium text-center lg:text-left">
               © 2024 EzTradeMachinery. All rights reserved.
             </p>
-            <div className="flex flex-wrap items-center gap-2 text-[#99A1AF] text-sm font-inter font-medium">
-              {legalLinks.map((link, index) => (
-                <React.Fragment key={link}>
-                  <a href="#" className="text-[#99A1AF] text-sm font-inter font-mediumhover:text-[#FFB703] transition-colors">
-                    {link}
-                  </a>
-                  {index < legalLinks.length - 1 && (
-                    <span className="text-gray-600"></span>
-                  )}
-                </React.Fragment>
+            <div className="flex flex-wrap justify-center lg:justify-end items-center gap-x-6 gap-y-2 text-[#99A1AF] text-sm font-inter font-medium">
+              {legalLinks.map((link) => (
+                <a key={link} href="#" className="hover:text-[#FFB703] transition-colors whitespace-nowrap">
+                  {link}
+                </a>
               ))}
             </div>
           </div>

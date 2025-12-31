@@ -20,7 +20,7 @@ import YouMayAlsoLike from './YouMayAlsoLike'
 
 const PromoDashboard = () => {
     return (
-        <div className="flex-1 space-y-10">
+        <div className="flex-1 space-y-10 overflow-hidden">
             {/* Promo Banner & Quick Links Row */}
             <div className="flex flex-col xl:flex-row gap-6">
                 {/* Black Friday Banner */}
@@ -110,10 +110,10 @@ const PromoDashboard = () => {
                         { title: '2021 CAT 950M Wheel Loader', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-39%', img: Caterpillar },
                         { title: 'CAT 320D Excavator...', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-13%', img: Volvo }
                     ].map((deal, idx) => (
-                        <div key={idx} className="group cursor-pointer">
+                        <div key={idx} className="group b-card-hover">
                             <div className="relative aspect-[163/194] xl:aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 mb-3">
                                 <img src={deal.img} alt={deal.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                                <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-bold px-2 py-1 rounded-[16px]">{deal.discount}</div>
+                                <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-normal px-2 py-1 rounded-[16px]">{deal.discount}</div>
                             </div>
                             <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-1 line-clamp-1">{deal.title}</h3>
                             <div className="flex items-center gap-1 text-[12px] text-[#6E7375] mb-1">
@@ -142,7 +142,7 @@ const PromoDashboard = () => {
                         { title: 'Volvo EC950F Crawler...', price: '1800', img: Volvo },
                         { title: 'Komatsu PC360LCI-11...', price: '1400', img: Komatsu }
                     ].map((item, idx) => (
-                        <div key={idx} className="group cursor-pointer">
+                        <div key={idx} className="group b-card-hover">
                             <div className="aspect-[1/1] rounded-[8px] overflow-hidden bg-gray-100 mb-2">
                                 <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                             </div>
@@ -154,53 +154,55 @@ const PromoDashboard = () => {
             </div>
 
             {/* Bottom Service Banners */}
-            <div className="flex overflow-x-auto gap-6 pb-4 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
-                <div className="min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
-                    <div className="z-10">
-                        <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">
-                            <div
-                                className="w-5 h-5 bg-white"
-                                style={{
-                                    maskImage: `url(${Shipping})`,
-                                    WebkitMaskImage: `url(${Shipping})`,
-                                    maskRepeat: 'no-repeat',
-                                    WebkitMaskRepeat: 'no-repeat',
-                                    maskSize: 'contain',
-                                    WebkitMaskSize: 'contain'
-                                }}
-                            /> Shipping Services
+            <div className="w-full overflow-hidden">
+                <div className="flex overflow-x-auto gap-6 pb-4 md:grid md:grid-cols-2 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
+                    <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#355842] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
+                        <div className="z-10">
+                            <div className="flex items-center gap-2 text-[12px] font-400 mb-2 text-white/80">
+                                <div
+                                    className="w-5 h-5 bg-white"
+                                    style={{
+                                        maskImage: `url(${Shipping})`,
+                                        WebkitMaskImage: `url(${Shipping})`,
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskSize: 'contain',
+                                        WebkitMaskSize: 'contain'
+                                    }}
+                                /> Shipping Services
+                            </div>
+                            <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
+                            <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
+                            <div className="flex gap-2">
+                                <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Domestic</button>
+                                <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20 transition-all hover:bg-white/30 hover:-translate-y-0.5 active:scale-[0.98]">International</button>
+                            </div>
                         </div>
-                        <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
-                        <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
-                        <div className="flex gap-2">
-                            <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500">Domestic</button>
-                            <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20">International</button>
-                        </div>
+                        <div><img src={ShippingB} alt="" /></div>
                     </div>
-                    <div><img src={ShippingB} alt="" /></div>
-                </div>
 
-                <div className="min-w-[90vw] md:min-w-0 snap-center bg-[#3A3B5E] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
-                    <div className="z-10">
-                        <div className="flex items-center gap-2 text-[12px] font-400 opacity-80 mb-2">
-                            <div
-                                className="w-5 h-5 bg-white"
-                                style={{
-                                    maskImage: `url(${Finance})`,
-                                    WebkitMaskImage: `url(${Finance})`,
-                                    maskRepeat: 'no-repeat',
-                                    WebkitMaskRepeat: 'no-repeat',
-                                    maskSize: 'contain',
-                                    WebkitMaskSize: 'contain'
-                                }}
-                            /> Financing Available
+                    <div className="min-w-[85vw] sm:min-w-[90vw] md:min-w-0 snap-center bg-[#3A3B5E] rounded-[8px] p-6 text-white flex items-start justify-between relative overflow-hidden shadow-lg">
+                        <div className="z-10">
+                            <div className="flex items-center gap-2 text-[12px] font-400 opacity-80 mb-2">
+                                <div
+                                    className="w-5 h-5 bg-white"
+                                    style={{
+                                        maskImage: `url(${Finance})`,
+                                        WebkitMaskImage: `url(${Finance})`,
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskSize: 'contain',
+                                        WebkitMaskSize: 'contain'
+                                    }}
+                                /> Financing Available
+                            </div>
+                            <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
+                            <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
+                            <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Learn More</button>
                         </div>
-                        <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
-                        <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
-                        <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-bold">Learn More</button>
+                        {/* Decorative $ sign */}
+                        <div ><img src={FinanceB} alt="" /></div>
                     </div>
-                    {/* Decorative $ sign */}
-                    <div ><img src={FinanceB} alt="" /></div>
                 </div>
             </div>
             {/* Short Videos */}

@@ -84,7 +84,7 @@ const Auction = () => {
 
             <div className="flex overflow-x-auto gap-6 pb-6 lg:grid lg:grid-cols-3 xl:grid-cols-5 lg:gap-6 xl:gap-[40px] lg:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none">
                 {auctions.map((item) => (
-                    <div key={item.id} className="flex flex-col gap-3 min-w-[280px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink">
+                    <div key={item.id} className="flex flex-col gap-3 min-w-[280px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink b-card-hover h-full">
                         <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 group">
                             <img
                                 src={item.image}

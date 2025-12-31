@@ -44,7 +44,7 @@ const FeaturedCompanies = () => {
         {companies.map((company) => (
           <div
             key={company.id}
-            className="bg-white border border-[#0000001A] rounded-[4px] p-6 flex items-center justify-between hover:shadow-md transition-shadow"
+            className="bg-white border border-[#0000001A] rounded-[4px] p-6 flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer"
           >
             <div className="flex items-center gap-4 flex-1">
               <div className="md:w-[83px] md:h-[83px] w-[60px] h-[60px] bg-white rounded-lg flex items-center justify-center p-2">
@@ -61,7 +61,7 @@ const FeaturedCompanies = () => {
               </div>
             </div>
 
-            <button className="ml-4 px-6 py-2 bg-[#E8EBEB] hover:bg-gray-200 text-[#53575A] font-medium rounded-[48px] transition-colors font-inter text-sm">
+            <button className="ml-4 px-6 py-2 bg-[#E8EBEB] hover:bg-[#dadada] text-[#53575A] font-medium rounded-[48px] transition-all hover:shadow-sm hover:-translate-y-0.5 active:scale-[0.95] font-inter text-sm">
               Visit
             </button>
           </div>

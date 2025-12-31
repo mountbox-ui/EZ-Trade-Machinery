@@ -1,13 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 import Button from './Button'
 import logo from '../assets/EZ-Trade-Logo.svg'
-import favoritesIcon from '../assets/Nav-Icons/Favorites.png'
-import messagesIcon from '../assets/Nav-Icons/Messages.png'
-import alertsIcon from '../assets/Nav-Icons/Alerts.png'
-import profileIcon from '../assets/Nav-Icons/Profile.png'
+import favoritesIcon from '../assets/Nav-Icons/FavoritesS.svg'
+import messagesIcon from '../assets/Nav-Icons/MessagesS.svg'
+import alertsIcon from '../assets/Nav-Icons/AlertsS.svg'
+import profileIcon from '../assets/Nav-Icons/ProfileS.svg'
+
+const countries = [
+  { id: 1, name: 'United States' },
+  { id: 2, name: 'Canada' },
+  { id: 3, name: 'United Kingdom' },
+  { id: 4, name: 'Australia' },
+  { id: 5, name: 'Germany' },
+]
+
+const currencies = [
+  { id: 1, name: 'USD', symbol: '$' },
+  { id: 2, name: 'EUR', symbol: '€' },
+  { id: 3, name: 'GBP', symbol: '£' },
+  { id: 4, name: 'AUD', symbol: 'A$' },
+]
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState('Home')
+  const [selectedCountry, setSelectedCountry] = useState(countries[0])
+  const [selectedCurrency, setSelectedCurrency] = useState(currencies[0])
+
+  // Hover states
+  const [isCountryOpen, setIsCountryOpen] = useState(false)
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false)
+  const [isProfileOpen, setIsProfileOpen] = useState(false)
 
   const navLinks = [
     'Home',
@@ -25,18 +49,111 @@ const Navbar = () => {
       <div className="hidden lg:block border-b border-gray-700">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10 text-sm">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
+              {/* Ship to Dropdown */}
               <div className="flex items-center space-x-2">
                 <span className="text-[#99A1AF]">Ship to:</span>
-                <select className="bg-[#1A1A1A] text-white border-none outline-none cursor-pointer hover:text-yellow-500">
-                  <option>United States</option>
-                </select>
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsCountryOpen(true)}
+                  onMouseLeave={() => setIsCountryOpen(false)}
+                >
+                  <Listbox value={selectedCountry} onChange={setSelectedCountry}>
+                    <ListboxButton className="relative w-full cursor-pointer flex items-center gap-1 bg-transparent text-white text-left focus:outline-none hover:text-[#FFB703] transition-colors">
+                      <span className="block truncate">{selectedCountry.name}</span>
+                      <ChevronDownIcon className="h-4 w-4 text-[#99A1AF]" aria-hidden="true" />
+                    </ListboxButton>
+                    <Transition
+                      show={isCountryOpen}
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <ListboxOptions static className="absolute z-50 mt-1 max-h-60 w-48 overflow-auto rounded-md bg-[#2C2C2C] py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border border-gray-700">
+                        {countries.map((country) => (
+                          <ListboxOption
+                            key={country.id}
+                            className={({ active }) =>
+                              `relative cursor-pointer select-none py-2 pl-10 pr-4 ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`
+                            }
+                            value={country}
+                          >
+                            {({ selected, active }) => (
+                              <>
+                                <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                                  {country.name}
+                                </span>
+                                {selected ? (
+                                  <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active ? 'text-gray-900' : 'text-[#FFB703]'}`}>
+                                    <CheckIcon className="h-4 w-4" aria-hidden="true" />
+                                  </span>
+                                ) : null}
+                              </>
+                            )}
+                          </ListboxOption>
+                        ))}
+                      </ListboxOptions>
+                    </Transition>
+                  </Listbox>
+                </div>
               </div>
+
+              {/* Currency Dropdown */}
               <div className="flex items-center space-x-2">
                 <span className="text-[#99A1AF]">Currency:</span>
-                <select className="bg-[#1A1A1A] text-white border-none outline-none cursor-pointer hover:text-yellow-500">
-                  <option>USD</option>
-                </select>
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsCurrencyOpen(true)}
+                  onMouseLeave={() => setIsCurrencyOpen(false)}
+                >
+                  <Listbox value={selectedCurrency} onChange={setSelectedCurrency}>
+                    <ListboxButton className="relative w-full cursor-pointer flex items-center gap-1 bg-transparent text-white text-left focus:outline-none hover:text-[#FFB703] transition-colors">
+                      <span className="block truncate">{selectedCurrency.name}</span>
+                      <ChevronDownIcon className="h-4 w-4 text-[#99A1AF]" aria-hidden="true" />
+                    </ListboxButton>
+                    <Transition
+                      show={isCurrencyOpen}
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <ListboxOptions static className="absolute z-50 mt-1 max-h-60 w-32 overflow-auto rounded-md bg-[#2C2C2C] py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border border-gray-700">
+                        {currencies.map((currency) => (
+                          <ListboxOption
+                            key={currency.id}
+                            className={({ active }) =>
+                              `relative cursor-pointer select-none py-2 pl-10 pr-4 ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`
+                            }
+                            value={currency}
+                          >
+                            {({ selected, active }) => (
+                              <>
+                                <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                                  {currency.name}
+                                </span>
+                                {selected ? (
+                                  <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active ? 'text-gray-900' : 'text-[#FFB703]'}`}>
+                                    <CheckIcon className="h-4 w-4" aria-hidden="true" />
+                                  </span>
+                                ) : null}
+                              </>
+                            )}
+                          </ListboxOption>
+                        ))}
+                      </ListboxOptions>
+                    </Transition>
+                  </Listbox>
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -61,7 +178,69 @@ const Navbar = () => {
                 </a>
               </div>
 
-              {/* Mobile Profile Icon (Optional if user wanted but let's stick to their request) */}
+              {/* Profile - Visible on mobile/tablet here */}
+              <div
+                className="lg:hidden relative"
+                onMouseEnter={() => setIsProfileOpen(true)}
+                onMouseLeave={() => setIsProfileOpen(false)}
+              >
+                <Menu as="div">
+                  <MenuButton className="flex flex-col items-center hover:opacity-80 transition-opacity focus:outline-none">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="h-[32px] w-[32px] rounded-full bg-[#FFB703] flex items-center justify-center">
+                        <img src={profileIcon} alt="Profile" className="h-[15px] w-[15px]" />
+                      </div>
+                      <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                  </MenuButton>
+                  <Transition
+                    show={isProfileOpen}
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <MenuItems static className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#2C2C2C] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-gray-700">
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`}
+                          >
+                            My Orders
+                          </a>
+                        )}
+                      </MenuItem>
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`}
+                          >
+                            Help
+                          </a>
+                        )}
+                      </MenuItem>
+                      <div className="border-t border-gray-700 my-1"></div>
+                      <MenuItem>
+                        {({ active }) => (
+                          <button
+                            className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-red-500 text-white' : 'text-red-400'
+                              }`}
+                          >
+                            Logout
+                          </button>
+                        )}
+                      </MenuItem>
+                    </MenuItems>
+                  </Transition>
+                </Menu>
+              </div>
             </div>
 
             {/* Search Bar - Responsive */}
@@ -74,7 +253,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search equipment, category..."
-                className="w-full h-11 lg:h-12 pt-1 pr-14 lg:pr-24 pb-1 pl-12 flex items-center rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-sm"
+                className="w-full h-11 lg:h-12 pt-1 pr-14 lg:pr-24 pb-1 pl-12 flex items-center rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FFB703] shadow-sm"
               />
               <button
                 type="button"
@@ -110,23 +289,75 @@ const Navbar = () => {
                 <span className="text-xs text-white">Alerts</span>
               </button>
 
-              {/* Profile */}
-              <button className="flex flex-col items-center hover:opacity-80 transition-opacity">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="h-[32px] w-[32px] rounded-full bg-[#FFB703] flex items-center justify-center">
-                    <img src={profileIcon} alt="Profile" className="h-[15px] w-[15px]" />
-                  </div>
-                  <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </button>
+              {/* Profile - Visible on desktop here */}
+              <div
+                className="hidden lg:block relative"
+                onMouseEnter={() => setIsProfileOpen(true)}
+                onMouseLeave={() => setIsProfileOpen(false)}
+              >
+                <Menu as="div">
+                  <MenuButton className="flex flex-col items-center hover:opacity-80 transition-opacity focus:outline-none">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="h-[32px] w-[32px] rounded-full bg-[#FFB703] flex items-center justify-center">
+                        <img src={profileIcon} alt="Profile" className="h-[15px] w-[15px]" />
+                      </div>
+                      <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                  </MenuButton>
+                  <Transition
+                    show={isProfileOpen}
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <MenuItems static className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#2C2C2C] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-gray-700">
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900 hover:bg-[#FFB703]' : 'text-gray-200'
+                              }`}
+                          >
+                            My Orders
+                          </a>
+                        )}
+                      </MenuItem>
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`}
+                          >
+                            Help
+                          </a>
+                        )}
+                      </MenuItem>
+                      <div className="border-t border-gray-700 my-1"></div>
+                      <MenuItem>
+                        {({ active }) => (
+                          <button
+                            className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-red-500 text-white' : 'text-red-400'
+                              }`}
+                          >
+                            Logout
+                          </button>
+                        )}
+                      </MenuItem>
+                    </MenuItems>
+                  </Transition>
+                </Menu>
+              </div>
 
               {/* Sell Equipment Button */}
               <div className="flex-shrink-0">
                 <button
                   type="button"
-                  className="flex w-[162px] h-10 px-6 py-2 justify-center items-center gap-2 rounded bg-[#FFB703] text-gray-900 font-medium transition-colors"
+                  className="flex w-[162px] h-10 px-6 py-2 justify-center items-center gap-2 rounded bg-[#FFB703] text-gray-900 font-normal transition-colors hover:bg-[#FFB703]/90"
                 >
                   Sell Equipment
                 </button>
@@ -141,11 +372,11 @@ const Navbar = () => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-12">
             {/* All Categories Menu */}
-            <button className="flex items-center space-x-2 pr-4 py-2 transition-colors rounded-md mr-4">
+            <button className="flex items-center space-x-2 pr-4 py-2 transition-colors rounded-md mr-4 hover:text-[#FFB703]">
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <span>All Categories</span>
+              <span className="font-normal">All Categories</span>
             </button>
 
             {/* Navigation Links */}
@@ -154,9 +385,9 @@ const Navbar = () => {
                 <button
                   key={link}
                   onClick={() => setActiveNav(link)}
-                  className={`px-4 py-2 rounded-md transition-colors ${activeNav === link
-                    ? 'text-yellow-500'
-                    : ''
+                  className={`px-4 py-2 rounded-md transition-colors font-normal ${activeNav === link
+                    ? 'text-[#FFB703]'
+                    : 'hover:text-[#FFB703]'
                     }`}
                 >
                   {link}

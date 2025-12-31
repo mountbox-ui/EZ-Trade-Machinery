@@ -32,7 +32,7 @@ const CategorySidebar = () => {
                 <h3 className="text-[18px] font-bold text-[#1A1C1E] mb-4 font-inter">Manufacturer</h3>
                 <ul className="space-y-3">
                     {manufacturers.map((item) => (
-                        <li key={item} className="text-[#6E7375] text-[14px] hover:text-[#FDBC31] cursor-pointer transition-colors font-medium">
+                        <li key={item} className="text-[#6E7375] text-[14px] hover:text-black cursor-pointer transition-colors font-medium">
                             {item}
                         </li>
                     ))}
@@ -44,7 +44,7 @@ const CategorySidebar = () => {
                 <h3 className="text-[18px] font-bold text-[#1A1C1E] mb-4 font-inter">Year Range</h3>
                 <ul className="space-y-3">
                     {years.map((item) => (
-                        <li key={item} className="text-[#6E7375] text-[14px] hover:text-[#FDBC31] cursor-pointer transition-colors font-medium">
+                        <li key={item} className="text-[#6E7375] text-[14px] hover:text-black cursor-pointer transition-colors font-medium">
                             {item}
                         </li>
                     ))}

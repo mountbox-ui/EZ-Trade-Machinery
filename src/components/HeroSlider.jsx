@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import banner1 from '../assets/Banner-Img/Banner-1.jpg'
-import banner2 from '../assets/Banner-Img/Banner-2.jpg'
+
 // import banner3 from '../assets/Banner-Img/Banner-3.jpg'
 
 const slides = [
@@ -18,7 +18,7 @@ const slides = [
     titleHighlight: 'HEAVY MACHINERY',
     subtitle: 'ACROSS THE GLOBE',
     description: 'TRUSTED TRADERS & VERIFIED DEALERS',
-    imageUrl: banner2,
+    imageUrl: banner1,
   },
   {
     id: 3,
@@ -87,7 +87,8 @@ const HeroSlider = () => {
         <button
           type="button"
           onClick={goToPrev}
-          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
+          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-r rounded-l-none
+ bg-white shadow text-gray-700 hover:bg-gray-100"
         >
           <span className="sr-only">Previous</span>
           &#8249;
@@ -96,7 +97,8 @@ const HeroSlider = () => {
         <button
           type="button"
           onClick={goToNext}
-          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded bg-white shadow text-gray-700 hover:bg-gray-100"
+          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-l rounded-r-none
+ bg-white shadow text-gray-700 hover:bg-gray-100"
         >
           <span className="sr-only">Next</span>
           &#8250;
