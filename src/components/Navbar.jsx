@@ -177,6 +177,70 @@ const Navbar = () => {
                   <img src={logo} alt="EZ Trade Machinery" className="h-8 sm:h-10 lg:h-12 w-auto" />
                 </a>
               </div>
+
+              {/* Profile - Visible on mobile/tablet here */}
+              <div
+                className="lg:hidden relative"
+                onMouseEnter={() => setIsProfileOpen(true)}
+                onMouseLeave={() => setIsProfileOpen(false)}
+              >
+                <Menu as="div">
+                  <MenuButton className="flex flex-col items-center hover:opacity-80 transition-opacity focus:outline-none">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="h-[32px] w-[32px] rounded-full bg-[#FFB703] flex items-center justify-center">
+                        <img src={profileIcon} alt="Profile" className="h-[15px] w-[15px]" />
+                      </div>
+                      <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                  </MenuButton>
+                  <Transition
+                    show={isProfileOpen}
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <MenuItems static className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#2C2C2C] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-gray-700">
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`}
+                          >
+                            My Orders
+                          </a>
+                        )}
+                      </MenuItem>
+                      <MenuItem>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                              }`}
+                          >
+                            Help
+                          </a>
+                        )}
+                      </MenuItem>
+                      <div className="border-t border-gray-700 my-1"></div>
+                      <MenuItem>
+                        {({ active }) => (
+                          <button
+                            className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-red-500 text-white' : 'text-red-400'
+                              }`}
+                          >
+                            Logout
+                          </button>
+                        )}
+                      </MenuItem>
+                    </MenuItems>
+                  </Transition>
+                </Menu>
+              </div>
             </div>
 
             {/* Search Bar - Responsive */}
@@ -225,9 +289,9 @@ const Navbar = () => {
                 <span className="text-xs text-white">Alerts</span>
               </button>
 
-              {/* Profile */}
+              {/* Profile - Visible on desktop here */}
               <div
-                className="relative"
+                className="hidden lg:block relative"
                 onMouseEnter={() => setIsProfileOpen(true)}
                 onMouseLeave={() => setIsProfileOpen(false)}
               >
@@ -255,7 +319,7 @@ const Navbar = () => {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900' : 'text-gray-200'
+                            className={`block px-4 py-2 text-sm ${active ? 'bg-[#FFB703] text-gray-900 hover:bg-[#FFB703]' : 'text-gray-200'
                               }`}
                           >
                             My Orders

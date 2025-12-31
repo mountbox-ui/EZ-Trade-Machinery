@@ -14,7 +14,6 @@ const MobileBottomNav = ({ navLinks, topLinks }) => {
         { label: 'Chats', icon: MessageIcon },
         { label: 'Sell', icon: SellIcon, isCenter: true },
         { label: 'Favourites', icon: FavoritesIcon },
-        { label: 'Account', icon: AccountIcon },
     ]
 
     return (

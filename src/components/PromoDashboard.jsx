@@ -174,8 +174,8 @@ const PromoDashboard = () => {
                             <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
                             <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
                             <div className="flex gap-2">
-                                <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500">Domestic</button>
-                                <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20">International</button>
+                                <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Domestic</button>
+                                <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20 transition-all hover:bg-white/30 hover:-translate-y-0.5 active:scale-[0.98]">International</button>
                             </div>
                         </div>
                         <div><img src={ShippingB} alt="" /></div>
@@ -198,7 +198,7 @@ const PromoDashboard = () => {
                             </div>
                             <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
                             <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
-                            <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-bold">Learn More</button>
+                            <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Learn More</button>
                         </div>
                         {/* Decorative $ sign */}
                         <div ><img src={FinanceB} alt="" /></div>
