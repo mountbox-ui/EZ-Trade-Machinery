@@ -21,6 +21,7 @@ import DealsGreen from '../assets/Promo-Icons/DealsGreen.svg'
 import FinanceWhite from '../assets/Promo-Icons/FinanceWhite.svg'
 import ShippingWhite from '../assets/Promo-Icons/ShippingWhite.svg'
 import Button from './Button'
+import DealCard from './DealCard'
 
 const PromoDashboard = () => {
     return (
@@ -111,19 +112,7 @@ const PromoDashboard = () => {
                         { title: '2021 CAT 950M Wheel Loader', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-39%', img: Caterpillar },
                         { title: 'CAT 320D Excavator...', year: '2001', location: 'Texas, USA', price: '65,000', discount: '-13%', img: Volvo }
                     ].map((deal, idx) => (
-                        <div key={idx} className="grou md:b-card-hover hover:b-card-hover-none">
-                            <div className="relative aspect-[163/194] xl:aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 mb-3">
-                                <img src={deal.img} alt={deal.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                                <div className="absolute top-2 left-2 bg-[#EF4444] text-white text-[10px] font-normal px-2 py-1 rounded-[16px]">{deal.discount}</div>
-                            </div>
-                            <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-1 line-clamp-1">{deal.title}</h3>
-                            <div className="flex items-center gap-1 text-[12px] text-[#6E7375] mb-1">
-                                <span>{deal.year}</span>
-                                <span className="w-1 h-1 rounded-full bg-gray-300" />
-                                <span>{deal.location}</span>
-                            </div>
-                            <div className="text-[14px] sm:text-[16px] font-bold text-[#1A1C1E]">${deal.price}</div>
-                        </div>
+                        <DealCard key={idx} deal={deal} />
                     ))}
                 </div>
             </div>

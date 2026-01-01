@@ -1,0 +1,47 @@
+To use the 
+DealCard
+ component in another part of your application, follow these steps:
+
+1. Import the component
+At the top of your file, import the 
+DealCard
+:
+
+javascript
+import DealCard from './components/DealCard';
+
+2. Prepare the Deal Data
+The component expects a deal object. Note that it is flexible and can accept either img or image for the thumbnail:
+
+javascript
+const myDeal = {
+    title: 'Caterpillar 320D Excavator',
+    year: '2018',
+    location: 'Dubai, UAE',
+    price: '85,000',
+    discount: '-15%',
+    img: CaterpillarImage // or use 'image' field
+};
+
+3. Use in JSX
+You can render a single card or a list of cards using a grid:
+
+Single Card:
+
+jsx
+<DealCard deal={myDeal} />
+Grid of Cards:
+
+jsx
+<div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    {myDealsArray.map((deal, index) => (
+        <DealCard key={index} deal={deal} />
+    ))}
+</div>
+
+Key Features of 
+DealCard
+:
+Responsive Aspect Ratio: Automatically handles the unique mobile aspect ratio (163/194) and desktop ratio (4/3).
+Discount Badge: Automatically positions the red discount badge in the top-left.
+Hover Effects: Includes the b-card-hover styles and image scaling on hover.

@@ -1,0 +1,46 @@
+To use the 
+AuctionCard
+ component, you simply need to import it and pass an item object containing the required data.
+
+1. Import the component
+
+javascript
+import AuctionCard from './components/AuctionCard';
+
+2. Prepare your data
+The component expects an item object with these specific fields:
+
+javascript
+const auctionItem = {
+    id: 1,
+    title: '2017 Volvo EC380 Excavator...',
+    year: '2021',
+    location: 'Texas, USA',
+    condition: 'Good condition', // Optional
+    price: '65,000',
+    bids: '38',
+    timeLeft: '1h 20m',
+    image: YourImageVariable // Imported image or URL
+};
+
+3. Use it in your JSX
+You can use it for a single item or within a loop (map):
+
+Single item:
+
+jsx
+<AuctionCard item={auctionItem} />
+In a list:
+
+jsx
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  {auctions.map((item) => (
+    <AuctionCard key={item.id} item={item} />
+  ))}
+</div>
+Note on Navigation
+Currently, the "Place bid" button inside the card is set to log to the console (mocked). Once you install react-router-dom, you can update the 
+navigate
+ function inside 
+AuctionCard.jsx
+ to actually route to your auction details page.
