@@ -1,0 +1,42 @@
+# How to Use NewListingCard Component
+
+The `NewListingCard` component is a reusable horizontal card for displaying equipment listings.
+
+## Import
+```javascript
+import NewListingCard from './components/NewListingCard';
+```
+
+## Data Structure
+```javascript
+const listing = {
+    id: 1,
+    title: '2018 John Deere 310L Backhoe',
+    year: '2001',
+    condition: 'Good condition',
+    location: 'Texas, USA',
+    price: '85,000',
+    image: ImageVariable  // or 'img' field
+};
+```
+
+## Usage
+```jsx
+{/* Single Card */}
+<NewListingCard listing={listing} />
+
+{/* Grid Layout */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {listings.map((listing) => (
+        <NewListingCard key={listing.id} listing={listing} />
+    ))}
+</div>
+```
+
+## Features
+- Horizontal layout (image left, content right)
+- Fixed image size: 140px × 90px
+- Displays: title, year, condition, location, price
+- Ellipse separators between metadata
+- Hover scale effect on image
+- Responsive card hover styles

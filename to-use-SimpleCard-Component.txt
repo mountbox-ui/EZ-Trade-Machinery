@@ -1,0 +1,37 @@
+# How to Use SimpleCard Component
+
+The `SimpleCard` component is a reusable square card perfect for displaying simple product listings.
+
+## Import
+```javascript
+import SimpleCard from './components/SimpleCard';
+```
+
+## Data Structure
+```javascript
+const item = {
+    title: 'John Deere 850K Dozer',
+    price: '125,000',
+    img: ImageVariable  // or 'image' field
+};
+```
+
+## Usage
+```jsx
+{/* Single Card */}
+<SimpleCard item={item} />
+
+{/* Grid of Cards */}
+<div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+    {items.map((item, idx) => (
+        <SimpleCard key={idx} item={item} />
+    ))}
+</div>
+```
+
+## Features
+- Square 1:1 aspect ratio image
+- Hover scale effect on image
+- Title with line clamp (1 line max)
+- Price display
+- Responsive card hover styles

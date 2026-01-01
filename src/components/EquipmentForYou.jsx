@@ -5,6 +5,7 @@ import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Volvo from '../assets/Auction-Img/Volvo_EEC380.jpg'
 import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
 import StarIcon from '../assets/social_media_icons/star.png'
+import EquipmentCard from './EquipmentCard'
 
 const EquipmentForYou = () => {
   const items = [
@@ -53,27 +54,7 @@ const EquipmentForYou = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {items.map((item) => (
-          <div key={item.id} className="group md:b-card-hover hover:b-card-hover-none">
-            <div className="relative rounded-[8px] overflow-hidden mb-3">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 aspect-[4/3]"
-              />
-            </div>
-
-            <div className="flex flex-col md:gap-1">
-              <h3 className="font-inter font-bold text-base text-[#131214] line-clamp-1">{item.title}</h3>
-              <div className="flex flex-wrap items-center text-sm font-inter font-normal text-[#6E7375] gap-1">
-                <span>{item.year}</span>
-                <img src={EllipseIcon} alt="" className="mx-1" />
-                <span>{item.location}</span>
-              </div>
-              <div className="mt-1">
-                <span className="font-bold text-[#131214] text-base">${item.price}</span>
-              </div>
-            </div>
-          </div>
+          <EquipmentCard key={item.id} item={item} />
         ))}
       </div>
     </section>

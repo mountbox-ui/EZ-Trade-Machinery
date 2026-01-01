@@ -1,0 +1,39 @@
+# How to Use VideoCard Component
+
+The `VideoCard` component is a reusable vertical card designed for video content with a tall aspect ratio.
+
+## Import
+```javascript
+import VideoCard from './components/VideoCard';
+```
+
+## Data Structure
+```javascript
+const video = {
+    title: 'John Deere 850K Doz...',
+    views: '2.1k views',
+    img: ImageVariable  // or 'image' field
+};
+```
+
+## Usage
+```jsx
+{/* Single Card */}
+<VideoCard video={video} />
+
+{/* Horizontal Scrolling List */}
+<div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory">
+    {videos.map((video, idx) => (
+        <VideoCard key={idx} video={video} />
+    ))}
+</div>
+```
+
+## Features
+- Tall vertical aspect ratio (163:240)
+- Rounded corners (12px)
+- Hover scale effect on image
+- Gradient overlay on hover
+- Title with line clamp (1 line max)
+- Views count display
+- Snap scrolling support

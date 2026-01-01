@@ -1,0 +1,41 @@
+# How to Use EquipmentCard Component
+
+The `EquipmentCard` component is a reusable vertical card for displaying equipment items.
+
+## Import
+```javascript
+import EquipmentCard from './components/EquipmentCard';
+```
+
+## Data Structure
+```javascript
+const item = {
+    id: 1,
+    title: 'John Deere 850K Dozer...',
+    year: '2014',
+    location: 'Nevada, USA',
+    price: '65,000',
+    image: ImageVariable  // or 'img' field
+};
+```
+
+## Usage
+```jsx
+{/* Single Card */}
+<EquipmentCard item={item} />
+
+{/* Grid Layout */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {items.map((item) => (
+        <EquipmentCard key={item.id} item={item} />
+    ))}
+</div>
+```
+
+## Features
+- Vertical layout with 4:3 aspect ratio image
+- Displays: title, year, location, price
+- Ellipse separator between year and location
+- Hover scale effect on image
+- Responsive card hover styles
+- Bold title and price styling

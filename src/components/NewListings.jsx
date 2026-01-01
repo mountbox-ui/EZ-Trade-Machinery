@@ -5,6 +5,7 @@ import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Volvo from '../assets/Auction-Img/Volvo_EEC380.jpg'
 import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
 import BlinkIcon from '../assets/social_media_icons/blink.png'
+import NewListingCard from './NewListingCard'
 
 const NewListings = () => {
     const listings = [
@@ -75,29 +76,7 @@ const NewListings = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
                 {listings.map((listing) => (
-                    <div key={listing.id} className="group flex items-start gap-4 md:b-card-hover hover:b-card-hover-none">
-                        <div className="relative rounded-[8px] overflow-hidden flex-shrink-0">
-                            <img
-                                src={listing.image}
-                                alt={listing.title}
-                                className="w-[140px] h-[90px] object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-                        </div>
-
-                        <div className="flex flex-col gap-0 md:gap-1 flex-1">
-                            <h3 className="font-inter font-normal text-base text-[#131214] line-clamp-1">{listing.title}</h3>
-                            <div className="flex flex-wrap items-center text-sm font-inter font-normal text-[#6E7375] gap-1">
-                                <span>{listing.year}</span>
-                                <img src={EllipseIcon} alt="" className="mx-1" />
-                                <span>{listing.condition}</span>
-                                <img src={EllipseIcon} alt="" className="mx-1" />
-                                <span>{listing.location}</span>
-                            </div>
-                            <div className="mt-1">
-                                <span className="font-bold text-[#131214] text-sm">${listing.price}</span>
-                            </div>
-                        </div>
-                    </div>
+                    <NewListingCard key={listing.id} listing={listing} />
                 ))}
             </div>
         </section>

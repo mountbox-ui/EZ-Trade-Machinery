@@ -3,6 +3,7 @@ import Volvo from '../assets/Auction-Img/Volvo_EEC380.jpg'
 import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Komatsu from '../assets/Auction-Img/Komatsu_PC360LC.jpg'
 import JohnDeere from '../assets/Auction-Img/Johan_Deere_650K.jpg'
+import VideoCard from './VideoCard'
 
 const ShortVideos = () => {
     const videos = [
@@ -19,19 +20,7 @@ const ShortVideos = () => {
             <h2 className="text-[16px] md:text-[18px] font-bold text-[#1A1C1E] font-inter mb-4 px-1 lg:px-0">Short videos</h2>
             <div className="flex overflow-x-auto gap-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none snap-x snap-mandatory">
                 {videos.map((video, idx) => (
-                    <div key={idx} className="min-w-[140px] sm:min-w-[163px] snap-start group md:b-card-hover hover:b-card-hover-none">
-                        <div className="relative aspect-[163/240] rounded-[12px] overflow-hidden bg-gray-100 mb-3">
-                            <img
-                                src={video.img}
-                                alt={video.title}
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-                            {/* Gradient overlay for better text contrast if needed */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                        <h3 className="text-[14px] font-bold text-[#1A1C1E] mb-0.5 line-clamp-1 font-inter leading-tight">{video.title}</h3>
-                        <p className="text-[12px] text-[#6E7375] font-inter">{video.views}</p>
-                    </div>
+                    <VideoCard key={idx} video={video} />
                 ))}
             </div>
         </section>

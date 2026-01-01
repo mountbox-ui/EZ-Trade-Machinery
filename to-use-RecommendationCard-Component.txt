@@ -1,0 +1,41 @@
+# How to Use RecommendationCard Component
+
+The `RecommendationCard` component is a reusable card for displaying recommended equipment items.
+
+## Import
+```javascript
+import RecommendationCard from './components/RecommendationCard';
+```
+
+## Data Structure
+```javascript
+const item = {
+    id: 1,
+    title: 'John Deere 850K Dozer...',
+    year: '2014',
+    location: 'Nevada, USA',
+    price: '65,000',
+    image: ImageVariable  // or 'img' field
+};
+```
+
+## Usage
+```jsx
+{/* Single Card */}
+<RecommendationCard item={item} />
+
+{/* Grid Layout */}
+<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {items.map((item) => (
+        <RecommendationCard key={item.id} item={item} />
+    ))}
+</div>
+```
+
+## Features
+- Fixed image size: 300px × 216px
+- Displays: title, year, location, price
+- Ellipse separator between year and location
+- Hover scale effect on image
+- Cursor pointer for clickable feel
+- Responsive card hover styles
