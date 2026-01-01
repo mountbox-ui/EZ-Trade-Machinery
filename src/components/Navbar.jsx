@@ -8,6 +8,8 @@ import messagesIcon from '../assets/Nav-Icons/MessagesS.svg'
 import alertsIcon from '../assets/Nav-Icons/AlertsS.svg'
 import profileIcon from '../assets/Nav-Icons/ProfileS.svg'
 
+import { Link, useNavigate } from 'react-router-dom'
+
 const countries = [
   { id: 1, name: 'United States' },
   { id: 2, name: 'Canada' },
@@ -24,9 +26,7 @@ const currencies = [
 ]
 
 const Navbar = () => {
-  const navigate = (path) => {
-    console.log(`Navigating to: ${path}`)
-  }
+  const navigate = useNavigate()
 
   const [activeNav, setActiveNav] = useState('Home')
   const [selectedCountry, setSelectedCountry] = useState(countries[0])

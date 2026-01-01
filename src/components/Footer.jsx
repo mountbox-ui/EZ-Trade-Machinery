@@ -185,7 +185,7 @@ const Footer = () => {
           {/* Copyright & Legal Links */}
           <div className="mt-8 pt-6 border-t border-[#FFFFFF1A] flex flex-col items-center lg:flex-row justify-between gap-6">
             <p className="text-[#99A1AF] text-sm font-inter font-medium text-center lg:text-left">
-              © 2024 EzTradeMachinery. All rights reserved.
+              © 2026 EzTradeMachinery. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center lg:justify-end items-center gap-x-6 gap-y-2 text-[#99A1AF] text-sm font-inter font-medium">
               {legalLinks.map((link) => (
