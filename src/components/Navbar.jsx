@@ -24,6 +24,10 @@ const currencies = [
 ]
 
 const Navbar = () => {
+  const navigate = (path) => {
+    console.log(`Navigating to: ${path}`)
+  }
+
   const [activeNav, setActiveNav] = useState('Home')
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0])
@@ -246,15 +250,14 @@ const Navbar = () => {
                 placeholder="Search equipment, category..."
                 className="w-full h-11 lg:h-12 pt-1 pr-14 lg:pr-24 pb-1 pl-12 flex items-center rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FFB703] shadow-sm"
               />
-              <button
+              <Button
+                variant="primary"
                 type="button"
-                className="absolute flex items-center justify-center gap-2 w-10 lg:w-[78px] h-9 px-2 lg:px-4 py-2 right-1 top-[4px] lg:top-[6px] rounded bg-[#FFB703] text-gray-900 font-medium transition-colors hover:bg-[#FFB703]/90"
+                onClick={() => navigate('/search')}
+                className="absolute flex items-center justify-center gap-2 px-3 lg:px-4 h-9 right-1 top-[4px] lg:top-[6px] w-auto lg:w-[78px]"
               >
-                <span className="hidden lg:inline">Search</span>
-                <svg className="h-5 w-5 lg:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
+                <span className="text-sm lg:text-base">Search</span>
+              </Button>
             </div>
 
             {/* User Actions - Hidden on mobile */}
@@ -337,12 +340,14 @@ const Navbar = () => {
 
               {/* Sell Equipment Button */}
               <div className="flex-shrink-0">
-                <button
+                <Button
+                  variant="primary"
+                  onClick={() => navigate('/sell')}
                   type="button"
-                  className="flex w-[162px] h-10 px-6 py-2 justify-center items-center gap-2 rounded bg-[#FFB703] text-gray-900 font-normal transition-colors hover:bg-[#FFB703]/90"
+                  className="flex w-[162px]"
                 >
                   Sell Equipment
-                </button>
+                </Button>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import instagramIcon from '../assets/social_media_icons/Icon1.svg'
 import linkedinIcon from '../assets/social_media_icons/Icon2.svg'
 import youtubeIcon from '../assets/social_media_icons/Icon3.svg'
 import twitterIcon from '../assets/social_media_icons/Icon4.svg'
+import Button from './Button'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
@@ -171,12 +172,12 @@ const Footer = () => {
                   className="w-full sm:flex-1 px-4 py-2 rounded-lg bg-[#FFFFFF1A] text-white placeholder-gray-400 border border-[#FFFFFF33] focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:border-transparent"
                   required
                 />
-                <button
+                <Button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-2 bg-[#FFB703] text-gray-900 font-bold rounded-lg hover:bg-[#FFB703]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFB703] focus:ring-offset-2 focus:ring-offset-[#2C2C2C]"
+                  variant="primary"
                 >
-                  Subscribe
-                </button>
+                  <span>Subscribe</span>
+                </Button>
               </form>
             </div>
           </div>

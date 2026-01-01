@@ -20,6 +20,7 @@ import YouMayAlsoLike from './YouMayAlsoLike'
 import DealsGreen from '../assets/Promo-Icons/DealsGreen.svg'
 import FinanceWhite from '../assets/Promo-Icons/FinanceWhite.svg'
 import ShippingWhite from '../assets/Promo-Icons/ShippingWhite.svg'
+import Button from './Button'
 
 const PromoDashboard = () => {
     return (
@@ -52,9 +53,13 @@ const PromoDashboard = () => {
 
                     {/* Div 2: Right Content / Mobile Button Position */}
                     <div className="z-10 w-full xl:w-auto mt-auto xl:mt-0">
-                        <button className="flex items-center justify-center h-[36px] bg-[#FDBC31] hover:bg-[#e5a92c] text-[#1A1C1E] font-bold py-4 px-10 rounded-[40px] transition-all text-[16px] w-full xl:w-auto shadow-lg active:scale-[0.98]">
-                            Shop Deals Now
-                        </button>
+                        <Button
+                            variant="secondary"
+                            className="w-full"
+                            onClick={() => navigate(`/auction/${item.id}`)}
+                        >
+                            <span className="font-bold">Shop Deals Now</span>
+                        </Button>
                     </div>
                 </div>
 
@@ -89,12 +94,15 @@ const PromoDashboard = () => {
                         <img src={DealsGreen} alt="" />
                         <h2 className="text-[16px] md:text-[18px] font-bold text-[#1A1C1E] font-inter">Hot Deals</h2>
                     </div>
-                    <a href="#" className="text-[14px] text-[#2C2C2C] font-500 font-inter flex items-center gap-1 hover:underline">
+                    <Button
+                        variant="link"
+                        onClick={() => navigate(`/auction/${item.id}`)}
+                    >
                         See all
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.5 9L7.5 6L4.5 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </a>
+                    </Button>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                     {[
@@ -158,8 +166,14 @@ const PromoDashboard = () => {
                             <h3 className="text-[18px] font-bold mb-1">Get Shipping Quote</h3>
                             <p className="text-[12px] opacity-70 mb-5">Domestic & International shipping available for all equipment</p>
                             <div className="flex gap-2">
-                                <button className="bg-white text-[#304D3F] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Domestic</button>
-                                <button className="bg-white/20 text-white px-4 py-2 rounded-lg text-[12px] font-500 border border-white/20 transition-all hover:bg-white/30 hover:-translate-y-0.5 active:scale-[0.98]">International</button>
+                                <Button
+                                    variant="tertiary"
+                                    onClick={() => navigate(`/auction/${item.id}`)}
+                                >Domestic</Button>
+                                <Button
+                                    variant="tertiary2"
+                                    onClick={() => navigate(`/auction/${item.id}`)}
+                                >International</Button>
                             </div>
                         </div>
                         <div><img src={ShippingB} alt="" /></div>
@@ -173,7 +187,10 @@ const PromoDashboard = () => {
                             </div>
                             <h3 className="text-[18px] font-bold mb-1">Get Equipment Financing</h3>
                             <p className="text-[12px] opacity-70 mb-5">Flexible payment plans starting at 0% APR for qualified buyers</p>
-                            <button className="bg-white text-[#3B3D5E] px-4 py-2 rounded-lg text-[12px] font-500 transition-all hover:bg-gray-100 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]">Learn More</button>
+                            <Button
+                                variant="tertiary"
+                                onClick={() => navigate(`/auction/${item.id}`)}
+                            >Learn More</Button>
                         </div>
                         {/* Decorative $ sign */}
                         <div ><img src={FinanceB} alt="" /></div>

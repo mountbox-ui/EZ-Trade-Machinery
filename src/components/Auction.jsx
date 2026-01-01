@@ -6,6 +6,7 @@ import Volvo2 from '../assets/Auction-Img/Volvo_EEC383.jpg'
 import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Komatsu from '../assets/Auction-Img/Komatsu_PC360LC.jpg'
 import JohnDeere from '../assets/Auction-Img/Johan_Deere_650K.jpg'
+import Button from './Button'
 
 const auctions = [
     {
@@ -74,12 +75,12 @@ const Auction = () => {
                     <img src={clockRed} alt="Clock" className="w-5 h-5 sm:w-6 sm:h-6" />
                     <h2 className="text-[16px] md:text-[18px] font-bold text-gray-900 font-inter">Auctions Closing Soon</h2>
                 </div>
-                <button className="text-[13px] sm:text-sm font-medium text-gray-600 flex items-center gap-1 hover:text-gray-900 font-inter">
+                <Button variant="link">
                     See all
                     <svg width="14" height="14" className="sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 18l6-6-6-6" />
                     </svg>
-                </button>
+                </Button>
             </div>
 
             <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6 lg:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:display-none">
@@ -122,9 +123,13 @@ const Auction = () => {
                             </div>
                         </div>
 
-                        <button className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 active:scale-[0.98] text-gray-900 font-bold py-[8px] rounded-full text-sm transition-all mt-auto shadow-sm">
-                            Place bid
-                        </button>
+                        <Button
+                            variant="secondary"
+                            className="w-full"
+                            onClick={() => navigate(`/auction/${item.id}`)}
+                        >
+                            <span className="font-bold">Place bid</span>
+                        </Button>
                     </div>
                 ))}
             </div>
