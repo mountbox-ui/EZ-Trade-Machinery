@@ -4,6 +4,7 @@ import logo2 from '../assets/featuredcompanies/logo2.png'
 import logo3 from '../assets/featuredcompanies/logo3.png'
 import logo4 from '../assets/featuredcompanies/logo4.png'
 import featuredIcon from '../assets/featuredcompanies/featured.svg'
+import Button from './Button'
 
 const FeaturedCompanies = () => {
   const companies = [
@@ -61,9 +62,10 @@ const FeaturedCompanies = () => {
               </div>
             </div>
 
-            <button className="ml-4 px-6 py-2 bg-[#E8EBEB] hover:bg-[#dadada] text-[#53575A] font-medium rounded-[48px] transition-all hover:shadow-sm hover:-translate-y-0.5 active:scale-[0.95] font-inter text-sm">
-              Visit
-            </button>
+            <Button
+              variant="visit"
+              onClick={() => navigate(`/auction/${item.id}`)}
+            >Visit</Button>
           </div>
         ))}
       </div>
