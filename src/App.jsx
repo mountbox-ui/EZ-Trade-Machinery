@@ -9,6 +9,7 @@ import MobileBottomNav from './components/MobileBottomNav'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import MyAccount from './pages/MyAccount'
 
 function App() {
   const navLinks = [
@@ -49,6 +50,7 @@ function App() {
           } />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/account" element={<MyAccount />} />
         </Routes>
       </div>
     </Router>
