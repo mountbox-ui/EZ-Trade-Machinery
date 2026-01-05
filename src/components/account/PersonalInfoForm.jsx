@@ -85,7 +85,7 @@ const PersonalInfoForm = ({
             value={formData.firstName}
             onChange={handleChange('firstName')}
             placeholder="Enter first name"
-            variant="enabled"
+            variant="focus"
             className={errors.firstName ? 'border-red-500 focus:ring-red-500' : ''}
           />
           {errors.firstName && (

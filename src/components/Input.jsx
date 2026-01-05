@@ -17,7 +17,7 @@ const Input = ({
   const variants = {
     enabled: 'bg-white border border-gray-300',
     hover: 'bg-white border border-gray-400',
-    focus: 'bg-white border border-[#FFB703] ring-2 ring-[#FFB703]',
+    focus: 'bg-white border-2 border-[#6E7375] shadow-[0_0_0_4px_#E9E9E9]',
     filled: 'bg-[#F4F6F7] border border-gray-300 text-[#131214]',
     error: 'bg-white border border-red-500',
     disabled: 'bg-[#DADDDE] border border-[#C1C4C6] text-[#898D8F] cursor-not-allowed'
@@ -28,7 +28,7 @@ const Input = ({
     enabled: 'hover:border-gray-400 focus:ring-2 focus:ring-[#FFB703] focus:border-[#FFB703]',
     hover: 'hover:border-gray-500', // More prominent hover for hover variant
     focus: '', // Focus variant is already focused, no additional states needed
-    filled: 'hover:border-gray-400 focus:ring-2 focus:ring-[#FFB703] focus:border-[#FFB703]',
+    filled: 'hover:border-gray-400 focus:border-2 focus:border-[#6E7375] focus:shadow-[0_0_0_4px_#E9E9E9]',
     error: 'focus:ring-2 focus:ring-red-500 focus:border-red-500',
     disabled: '' // No interactive states for disabled
   }
