@@ -7,6 +7,7 @@ const MenuItem = ({
   to,
   onClick,
   isActive = false,
+  variant, // New variant prop: 'active' or 'inactive'
   className = ''
 }) => {
   const location = useLocation()
@@ -15,9 +16,21 @@ const MenuItem = ({
   const IconComponent = icon
 
   const baseClasses = 'flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors font-inter text-base font-medium leading-[1] tracking-normal'
-  const activeClasses = active 
-    ? 'bg-[#FFB703]/10 text-[#6E7375]' 
-    : 'text-[#6E7375] hover:bg-gray-100'
+  
+  // Variant styles
+  const variants = {
+    active: 'bg-[#FFB703]/10 text-[#6E7375]',
+    inactive: 'text-[#6E7375] hover:bg-gray-100'
+  }
+
+  // Determine which variant to use: explicit variant prop > active state > default inactive
+  const activeClasses = variant === 'active' 
+    ? variants.active 
+    : variant === 'inactive' 
+      ? variants.inactive 
+      : active 
+        ? variants.active 
+        : variants.inactive
 
   const renderIcon = () => {
     if (!IconComponent) return null
