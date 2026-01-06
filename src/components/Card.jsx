@@ -10,7 +10,7 @@ const Card = ({
   
   return (
     <div
-      className={`bg-white rounded-[8px] ${paddingClasses} ${className}`}
+      className={`bg-white rounded-[8px] w-auto lg:w-[580px] ${paddingClasses} ${className}`}
       {...props}
     >
       {children}

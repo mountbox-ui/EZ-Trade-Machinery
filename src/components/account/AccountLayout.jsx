@@ -5,6 +5,7 @@ import AccountContent from './AccountContent'
 const AccountLayout = ({
   sidebarProps = {},
   contentProps = {},
+  children,
   className = ''
 }) => {
   return (
@@ -18,7 +19,7 @@ const AccountLayout = ({
 
           {/* Right Content */}
           <div className="lg:col-span-3 bg-white rounded-md p-6 ">
-            <AccountContent {...contentProps} />
+            {children || <AccountContent {...contentProps} />}
           </div>
         </div>
       </div>

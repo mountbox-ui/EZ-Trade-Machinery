@@ -19,7 +19,7 @@ const MenuItem = ({
   
   // Variant styles
   const variants = {
-    active: 'bg-[#FFB703]/10 text-[#6E7375]',
+    active: 'bg-[#FAEFCC]/70 text-[#6E7375]',
     inactive: 'text-[#6E7375] hover:bg-gray-100'
   }
 

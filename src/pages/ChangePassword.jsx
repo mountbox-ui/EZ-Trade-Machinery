@@ -1,0 +1,79 @@
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import AccountLayout from '../components/account/AccountLayout'
+import ChangePassword from '../components/account/ChangePassword'
+
+const ChangePasswordPage = () => {
+  const location = useLocation()
+
+  const handlePasswordChange = async (formData) => {
+    // Handle password change
+    console.log('Password change:', formData)
+    // TODO: Implement API call to change password
+    // Example:
+    // const response = await fetch('/api/user/change-password', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(formData)
+    // })
+    // const data = await response.json()
+    // if (data.success) {
+    //   // Show success message
+    // } else {
+    //   // Show error message
+    // }
+  }
+
+  const handleEditStore = () => {
+    console.log('Edit store clicked')
+  }
+
+  const handleLogout = () => {
+    console.log('Logout clicked')
+  }
+
+  return (
+    <div className="min-h-screen bg-[#F8F9FA] flex flex-col">
+      {/* Header */}
+      <Navbar />
+
+      {/* Breadcrumb */}
+      <div className="mt-1">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <nav className="flex items-center gap-2 text-sm">
+            <Link to="/" className="text-gray-600 hover:text-[#FFB703] transition-colors">
+              Home
+            </Link>
+            <span className="text-gray-400">/</span>
+            <Link to="/account" className="text-gray-600 hover:text-[#FFB703] transition-colors">
+              My Account
+            </Link>
+            <span className="text-gray-400">/</span>
+            <span className="text-[#1A1C1E] font-medium">Change password</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Account Layout */}
+      <AccountLayout
+        sidebarProps={{
+          user: {
+            name: 'Anwar',
+            avatar: null,
+            joinedDate: 'Jan 2023',
+            isVerified: true
+          },
+          activeItem: 'change-password',
+          onEditStore: handleEditStore,
+          onLogout: handleLogout
+        }}
+      >
+        <ChangePassword onSubmit={handlePasswordChange} />
+      </AccountLayout>
+    </div>
+  )
+}
+
+export default ChangePasswordPage
+

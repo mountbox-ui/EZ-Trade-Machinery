@@ -113,7 +113,7 @@ const PersonalInfoForm = ({
           <Button
             type="submit"
             variant="primary"
-            className="h-12"
+            className="h-12 rounded-full"
           >
             Save
           </Button>

@@ -20,7 +20,8 @@ const Input = ({
     focus: 'bg-white border-2 border-[#6E7375] shadow-[0_0_0_4px_#E9E9E9]',
     filled: 'bg-[#F4F6F7] border border-gray-300 text-[#131214]',
     error: 'bg-white border border-red-500',
-    disabled: 'bg-[#DADDDE] border border-[#C1C4C6] text-[#898D8F] cursor-not-allowed'
+    disabled: 'bg-[#DADDDE] border border-[#C1C4C6] text-[#898D8F] cursor-not-allowed',
+    search: 'h-12 rounded-full bg-[#F4F6F7] flex items-center px-4 py-[14px] gap-4 w-auto lg:w-[480px]'
   }
 
   // Interactive states (hover and focus are automatic via CSS)
@@ -30,7 +31,8 @@ const Input = ({
     focus: '', // Focus variant is already focused, no additional states needed
     filled: 'hover:border-gray-400 focus:border-2 focus:border-[#6E7375] focus:shadow-[0_0_0_4px_#E9E9E9]',
     error: 'focus:ring-2 focus:ring-red-500 focus:border-red-500',
-    disabled: '' // No interactive states for disabled
+    disabled: '', // No interactive states for disabled
+    search: 'focus:ring-2 focus:ring-[#F4F6F7] focus:border-[#F4F6F7] border border-[#F4F6F7]'
   }
 
   // Handle read-only state (overrides variant)
