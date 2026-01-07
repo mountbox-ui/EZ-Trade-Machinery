@@ -30,7 +30,7 @@ const ChangePassword = ({ onSubmit, className = '' }) => {
 
   return (
     <div className={`${className}`}>
-      <h2 className="text-[#131214] font-inter text-2xl font-bold leading-[1.2] tracking-normal overflow-hidden overflow-ellipsis whitespace-nowrap pb-[30px]">Change password</h2>
+      <h2 className="text-[#131214] font-inter text-[32px] font-bold leading-[1.2] tracking-normal overflow-hidden overflow-ellipsis whitespace-nowrap pb-[30px]">Change password</h2>
 
       <hr className="border-t border-gray-200"/>
     

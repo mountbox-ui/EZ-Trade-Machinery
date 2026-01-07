@@ -10,8 +10,10 @@ import Footer from './components/Footer'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import MyAccount from './pages/MyAccount'
+import MyAds from './pages/MyAds'
 import Notifications from './pages/Notifications'
 import ChangePassword from './pages/ChangePassword'
+// import TermsAndConditions from './pages/TermsAndConditions'
 
 function App() {
   const navLinks = [
@@ -53,8 +55,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/account" element={<MyAccount />} />
+          <Route path="/account/my-ads" element={<MyAds />} />
           <Route path="/account/notifications" element={<Notifications />} />
           <Route path="/account/change-password" element={<ChangePassword />} />
+          {/* <Route path="/account/terms" element={<TermsAndConditions />} /> */}
         </Routes>
       </div>
     </Router>

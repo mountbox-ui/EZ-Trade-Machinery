@@ -32,26 +32,53 @@ const NotificationCard = ({
   const styles = variantStyles[notificationVariant]
   
   return (
-    <div className={`flex items-start gap-4 p-4 rounded-lg border hover:shadow-md transition-shadow relative cursor-pointer ${styles.container} ${className}`}>
-      {/* Icon */}
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full ${iconBgColor} flex items-center justify-center`}>
-        {icon}
+    <div className={`p-4 rounded-lg border hover:shadow-md transition-shadow relative cursor-pointer ${styles.container} ${className}`}>
+      {/* Desktop/Tablet Layout: Horizontal */}
+      <div className="hidden md:flex items-start gap-4">
+        {/* Icon */}
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full ${iconBgColor} flex items-center justify-center`}>
+          {icon}
+        </div>
+        
+        {/* Content */}
+        <div className="flex-1 min-w-0">
+          {heading && (
+            <h3 className={`text-sm mb-1 ${styles.heading}`}>{heading}</h3>
+          )}
+          <p className={`text-sm leading-relaxed ${styles.message}`}>{message}</p>
+        </div>
+        
+        {/* Timestamp and Unread Indicator - Right side */}
+        <div className="flex-shrink-0 flex items-start gap-2">
+          <p className={`text-xs whitespace-nowrap ${styles.timestamp}`}>{timestamp}</p>
+          {notificationVariant === 'unread' && (
+            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#FFB703] mt-1"></div>
+          )}
+        </div>
       </div>
-      
-      {/* Content */}
-      <div className="flex-1 min-w-0">
+
+      {/* Mobile Layout: Vertical */}
+      <div className="flex flex-col md:hidden gap-3">
+        {/* Icon at top */}
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full ${iconBgColor} flex items-center justify-center`}>
+          {icon}
+        </div>
+        
+        {/* Heading below icon */}
         {heading && (
-          <h3 className={`text-sm mb-1 ${styles.heading}`}>{heading}</h3>
+          <h3 className={`text-sm ${styles.heading}`}>{heading}</h3>
         )}
+        
+        {/* Message below heading */}
         <p className={`text-sm leading-relaxed ${styles.message}`}>{message}</p>
-      </div>
-      
-      {/* Timestamp and Unread Indicator - Right side */}
-      <div className="flex-shrink-0 flex items-start gap-2">
-        <p className={`text-xs whitespace-nowrap ${styles.timestamp}`}>{timestamp}</p>
-        {notificationVariant === 'unread' && (
-          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#FFB703] mt-1"></div>
-        )}
+        
+        {/* Timestamp and Unread Indicator at bottom */}
+        <div className="flex items-center justify-between mt-1">
+          <p className={`text-xs ${styles.timestamp}`}>{timestamp}</p>
+          {notificationVariant === 'unread' && (
+            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#FFB703]"></div>
+          )}
+        </div>
       </div>
     </div>
   )

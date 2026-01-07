@@ -103,13 +103,13 @@ const NotificationsContent = ({ className = '' }) => {
     <div className={`space-y-6 ${className}`}>
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-[#131214] font-inter">Notifications</h1>
+        <h1 className="text-[32px] font-bold text-[#131214] font-inter">Notifications</h1>
       </div>
 
       {/* Search and Filter */}
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Search Bar */}
-        <div className="flex-1 relative ">
+        <div className="flex-1 relative w-full sm:w-auto">
           <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
           <Input
             type="text"
@@ -117,16 +117,16 @@ const NotificationsContent = ({ className = '' }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             variant="search"
-            className="pl-10"
+            className="pl-10 w-full"
           />
         </div>
 
         {/* Filter Dropdown */}
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="h-12 px-4 pr-4 rounded-[8px] border border-gray-300 bg-white text-[#1A1C1E] focus:outline-none focus:ring-0.5 focus:ring-[#D1D5DC] focus:border-[#D1D5DC] appearance-none cursor-pointer"
+            className="h-12 px-4 pr-4 w-full sm:w-auto rounded-[8px] border border-gray-300 bg-white text-[#1A1C1E] focus:outline-none focus:ring-0.5 focus:ring-[#D1D5DC] focus:border-[#D1D5DC] appearance-none cursor-pointer"
           >
             <option value="All">All</option>
             <option value="Messages">Messages</option>
