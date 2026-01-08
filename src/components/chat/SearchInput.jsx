@@ -22,7 +22,10 @@ const SearchInput = ({
         value={value}
         onChange={onChange}
         variant="search"
-        className="pl-10 w-full !w-full"
+        className="pl-10 w-full max-w-none !border-[#DADDDE]"
+        style={{ 
+          width: '100%'
+        }}
         {...props}
       />
     </div>

@@ -48,7 +48,7 @@ const ContactItem = ({
   return (
     <div
       onClick={onClick}
-      className={`flex items-start gap-3 py-5 px-4 border-b border-black/10 cursor-pointer transition-colors ${variantStyles.container} ${className}`}
+      className={`flex items-start gap-2 sm:gap-3 py-4 sm:py-5 px-3 sm:px-4 border-b border-black/10 cursor-pointer transition-colors ${variantStyles.container} ${className}`}
       {...props}
     >
       <div className="relative flex-shrink-0">

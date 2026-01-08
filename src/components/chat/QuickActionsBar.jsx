@@ -12,12 +12,12 @@ const QuickActionsBar = ({
   ...props
 }) => {
   return (
-    <div className={`flex flex-wrap gap-2 px-4 pb-2 justify-center ${className}`} {...props}>
+    <div className={`flex flex-wrap gap-1.5 sm:gap-2 px-3 sm:px-4 pb-2 justify-center ${className}`} {...props}>
       {actions.map((action, index) => (
         <button
           key={index}
           onClick={() => onActionClick && onActionClick(action)}
-          className="px-3 py-1.5 text-xs font-medium bg-[#E8EBEB] hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+          className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-sm font-medium bg-[#E8EBEB] hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
         >
           {action}
         </button>

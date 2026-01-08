@@ -19,6 +19,10 @@ const ChatLayout = ({
     setActiveContactId(contactId)
   }
 
+  const handleBackToContacts = () => {
+    setActiveContactId(null)
+  }
+
   const handleSendMessage = (messageText) => {
     if (activeContactId && onSendMessage) {
       onSendMessage(activeContactId, messageText)
@@ -33,19 +37,21 @@ const ChatLayout = ({
 
   return (
     <div
-      className={`flex h-full bg-gray-50 ${className}`}
+      className={`flex flex-col lg:flex-row h-full bg-gray-50 ${className}`}
       {...props}
     >
-      {/* Sidebar */}
-      <Sidebar
-        contacts={contacts}
-        activeContactId={activeContactId}
-        onContactClick={handleContactClick}
-        variant="expanded"
-      />
+      {/* Sidebar - Full width on mobile/tablet, hidden when chat is active. Always visible on desktop */}
+      <div className={`${activeContactId ? 'hidden lg:flex' : 'flex'} w-full lg:w-auto`}>
+        <Sidebar
+          contacts={contacts}
+          activeContactId={activeContactId}
+          onContactClick={handleContactClick}
+          variant="expanded"
+        />
+      </div>
 
-      {/* Chat Window */}
-      <div className="flex-1 flex flex-col min-w-0">
+      {/* Chat Window - Full width on mobile/tablet, flex-1 on desktop */}
+      <div className={`flex-1 flex flex-col min-w-0 w-full lg:w-auto ${activeContactId ? 'flex' : 'hidden lg:flex'}`}>
         <ChatWindow
           messages={activeMessages}
           currentUserId={user?.id}
@@ -69,6 +75,7 @@ const ChatLayout = ({
               : null
           }
           showQuickActions={!!activeContactId}
+          onBack={handleBackToContacts}
         />
       </div>
     </div>

@@ -80,7 +80,7 @@ const MessageInput = ({
       {variant === 'withQuickActions' && showQuickActions && quickActions.length > 0 && (
         <QuickActionsBar actions={quickActions} onActionClick={onAction} />
       )}
-      <div className="flex items-center justify-center gap-3 p-4">
+      <div className="flex items-center justify-center gap-2 sm:gap-3 p-3 sm:p-4">
         {/* Attachment Button */}
         {variant === 'withAttachments' && (
           <button
@@ -104,7 +104,7 @@ const MessageInput = ({
         )}
 
         {/* Text Input */}
-        <div className={`relative flex-shrink-0 rounded-lg transition-all ${
+        <div className={`relative flex-shrink-0 rounded-lg transition-all w-auto md:w-[450px] xl:w-[600px] ${
           isFocused 
             ? 'bg-white border-2 border-[#6E7375] shadow-[0_0_0_4px_#E9E9E9]' 
             : isFilled 
@@ -122,7 +122,8 @@ const MessageInput = ({
             rows={1}
             className={`${baseStyles} ${variantClasses} pr-12 border-0`}
             style={{ 
-              width: '600px', 
+              width: '100%',
+              maxWidth: '600px',
               overflow: 'hidden',
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'

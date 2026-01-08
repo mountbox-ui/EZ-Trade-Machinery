@@ -55,7 +55,7 @@ const MessageList = ({
         </div>
       )}
       {/* Messages */}
-      <div className="px-4 space-y-2 w-[780px] mx-auto">
+      <div className="px-4 space-y-2 w-auto xl:w-[780px] mx-auto">
         {messages.map((message) => (
           <MessageItem
             key={message.id}

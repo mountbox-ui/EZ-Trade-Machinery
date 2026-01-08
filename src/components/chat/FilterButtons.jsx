@@ -19,13 +19,13 @@ const FilterButtons = ({
   }
 
   return (
-    <div className={`flex flex-wrap gap-2 ${className}`} {...props}>
+    <div className={`flex flex-wrap gap-1.5 sm:gap-2 ${className}`} {...props}>
       {filters.map((filter) => {
         if (filter === 'Tags') {
           return (
             <Menu key={filter} as="div" className="relative inline-block text-left">
               <MenuButton
-                className={`inline-flex items-center gap-1 px-4 py-2 rounded font-inter text-sm font-medium leading-none tracking-normal transition-colors ${
+                className={`inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 rounded font-inter text-xs sm:text-sm font-medium leading-none tracking-normal transition-colors ${
                   activeFilter === filter
                     ? 'bg-[var(--semantic-accent-intense,#1F2224)] text-[var(--semantic-accent-on-accent,#FFF)]'
                     : 'bg-gray-100 text-[#53575A] hover:bg-gray-200'
@@ -73,7 +73,7 @@ const FilterButtons = ({
           <button
             key={filter}
             onClick={() => onFilterChange(filter)}
-            className={`px-4 py-2 rounded font-inter text-sm font-medium leading-none tracking-normal transition-colors ${
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded font-inter text-xs sm:text-sm font-medium leading-none tracking-normal transition-colors ${
               activeFilter === filter
                 ? 'bg-[var(--semantic-accent-intense,#1F2224)] text-[var(--semantic-accent-on-accent,#FFF)]'
                 : filter === 'All'

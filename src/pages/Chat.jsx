@@ -185,7 +185,7 @@ const Chat = () => {
   return (
     <div className="flex flex-col h-screen bg-gray-50 overflow-hidden">
       <Navbar />
-      <div className="flex-1 min-h-0 max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <div className="flex-1 min-h-0 max-w-[1440px] mx-auto w-full px-0 sm:px-4 lg:px-8">
         <ChatLayout
           user={currentUser}
           messages={messages}

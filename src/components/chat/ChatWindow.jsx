@@ -17,6 +17,7 @@ const ChatWindow = ({
     'More photos',
     'Bookmark'
   ],
+  onBack,
   className = '',
   ...props
 }) => {
@@ -75,6 +76,7 @@ const ChatWindow = ({
           price={chatInfo.price}
           image={chatInfo.image}
           icons={chatInfo.icons || []}
+          onBack={onBack}
         />
       )}
 

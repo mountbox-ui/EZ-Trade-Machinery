@@ -7,20 +7,43 @@ const HeaderBar = ({
   icons = [],
   variant = 'default',
   statusIndicator,
+  onBack,
   className = '',
   ...props
 }) => {
   return (
     <div
-      className={`flex items-center justify-between p-4 border-b border-gray-200 bg-white ${className}`}
+      className={`flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 bg-white ${className}`}
       {...props}
     >
-      <div className="flex items-center gap-3 flex-1 min-w-0">
+      <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+        {/* Back button for mobile/tablet */}
+        {onBack && (
+          <button
+            onClick={onBack}
+            className="lg:hidden p-2 -ml-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-600 flex-shrink-0"
+            aria-label="Back to conversations"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+        )}
         {image && (
           <img
             src={image}
             alt={title}
-            className="w-[70px] h-[50px] object-cover flex-shrink-0"
+            className="w-[60px] h-[45px] sm:w-[70px] sm:h-[50px] object-cover flex-shrink-0"
           />
         )}
         <div className="flex-1 min-w-0">

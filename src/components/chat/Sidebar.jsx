@@ -31,7 +31,7 @@ const Sidebar = ({
     return matchesSearch && matchesFilter
   })
 
-  const sidebarWidth = variant === 'compact' ? 'w-16' : 'w-[440px]'
+  const sidebarWidth = variant === 'compact' ? 'w-16' : 'w-full lg:w-[440px]'
 
   return (
     <aside
@@ -41,7 +41,7 @@ const Sidebar = ({
       {variant === 'expanded' && (
         <>
           {/* Search Input */}
-          <div className="px-4 py-6">
+          <div className="px-3 sm:px-4 py-4 sm:py-6">
             <SearchInput
               placeholder="Search conversations..."
               value={searchQuery}
@@ -50,7 +50,7 @@ const Sidebar = ({
           </div>
 
           {/* Filter Buttons */}
-          <div className="px-4 py-2">
+          <div className="px-3 sm:px-4 py-2">
             <FilterButtons
               filters={filters}
               activeFilter={activeFilter}
