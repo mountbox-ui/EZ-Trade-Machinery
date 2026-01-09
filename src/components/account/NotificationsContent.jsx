@@ -129,12 +129,8 @@ const NotificationsContent = ({ className = '' }) => {
             className="h-12 px-4 pr-4 w-full sm:w-auto rounded-[8px] border border-gray-300 bg-white text-[#1A1C1E] focus:outline-none focus:ring-0.5 focus:ring-[#D1D5DC] focus:border-[#D1D5DC] appearance-none cursor-pointer"
           >
             <option value="All">All</option>
-            <option value="Messages">Messages</option>
             <option value="Offers">Offers</option>
-            <option value="Price Alerts">Price Alerts</option>
-            <option value="Approvals">Approvals</option>
             <option value="Favorites">Favorites</option>
-            <option value="Verification">Verification</option>
           </select>
           <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
         </div>
