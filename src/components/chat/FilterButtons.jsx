@@ -7,7 +7,7 @@ const FilterButtons = ({
   activeFilter,
   onFilterChange,
   className = '',
-  tags = ['Equipment', 'Parts', 'Services', 'Deals', 'Featured'],
+  tags = ['Parts', 'Deals'],
   ...props
 }) => {
   const [selectedTag, setSelectedTag] = useState(null)
