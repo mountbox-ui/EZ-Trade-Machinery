@@ -64,7 +64,7 @@ const PersonalInfoForm = ({
 
   return (
     <form onSubmit={handleSubmit} className={className}>
-      <div className="flex items-center gap-4 mb-4">
+      <div className="flex items-center gap-4 mb-4 mt-[32px]">
         <h3 className="text-lg font-bold text-[#1A1C1E]">Personal Information</h3>
         <Button
           type="button"

@@ -7,7 +7,7 @@ const Card = ({
   fullWidth = false,
   ...props
 }) => {
-  const paddingClasses = padding ? 'px-0 lg:px-6 py-6' : ''
+  const paddingClasses = padding ? 'px-0 lg:px-4 py-6' : ''
   const widthClasses = fullWidth ? 'w-full' : 'w-auto lg:w-[580px]'
 
   return (
