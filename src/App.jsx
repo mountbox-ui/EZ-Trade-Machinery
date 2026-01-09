@@ -13,7 +13,7 @@ import MyAccount from './pages/MyAccount'
 import MyAds from './pages/MyAds'
 import Notifications from './pages/Notifications'
 import ChangePassword from './pages/ChangePassword'
-import TermsAndConditions from './pages/TermsAndConditions'
+// import TermsAndConditions from './pages/TermsAndConditions'
 import Chat from './pages/Chat'
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
           <Route path="/account/my-ads" element={<MyAds />} />
           <Route path="/account/notifications" element={<Notifications />} />
           <Route path="/account/change-password" element={<ChangePassword />} />
-          <Route path="/account/terms" element={<TermsAndConditions />} />
+          {/* <Route path="/account/terms" element={<TermsAndConditions />} /> */}
           <Route path="/chat" element={<Chat />} />
         </Routes>
       </div>
