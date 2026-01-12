@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp'
 import MyAccount from './pages/MyAccount'
 import MyAds from './pages/MyAds'
 import WantToBuy from './pages/WantToBuy'
+import PostWantToBuy from './pages/PostWantToBuy'
 import Notifications from './pages/Notifications'
 import ChangePassword from './pages/ChangePassword'
 import TermsAndConditions from './pages/TermsAndConditions'
@@ -59,6 +60,7 @@ function App() {
           <Route path="/account" element={<MyAccount />} />
           <Route path="/account/my-ads" element={<MyAds />} />
           <Route path="/account/want-to-buy" element={<WantToBuy />} />
+          <Route path="/account/want-to-buy/post" element={<PostWantToBuy />} />
           <Route path="/account/notifications" element={<Notifications />} />
           <Route path="/account/change-password" element={<ChangePassword />} />
           <Route path="/account/terms" element={<TermsAndConditions />} />

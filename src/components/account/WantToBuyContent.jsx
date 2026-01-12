@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from '../Button'
 import WantToBuyCard from './WantToBuyCard'
 
 const WantToBuyContent = ({ className = '' }) => {
+  const navigate = useNavigate()
   // Sample "Want to Buy" requests data
   const wantToBuyRequests = [
     {
@@ -64,9 +66,8 @@ const WantToBuyContent = ({ className = '' }) => {
   ]
 
   const handlePostWantToBuy = () => {
-    // Handle post want to buy action
-    console.log('Post A Want-To-Buy clicked')
-    // Navigate to create want to buy page or open modal
+    // Navigate to Post A Want-To-Buy page
+    navigate('/account/want-to-buy/post')
   }
 
   return (
