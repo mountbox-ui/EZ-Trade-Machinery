@@ -17,6 +17,8 @@ import Notifications from './pages/Notifications'
 import ChangePassword from './pages/ChangePassword'
 import TermsAndConditions from './pages/TermsAndConditions'
 import Chat from './pages/Chat'
+import Listing from './pages/Listing'
+import MyStore from './pages/MyStore'
 
 function App() {
   const navLinks = [
@@ -65,6 +67,8 @@ function App() {
           <Route path="/account/change-password" element={<ChangePassword />} />
           <Route path="/account/terms" element={<TermsAndConditions />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/listings" element={<Listing />} />
+          <Route path="/store" element={<MyStore />} />
         </Routes>
       </div>
     </Router>
