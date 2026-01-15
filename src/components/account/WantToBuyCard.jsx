@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ClockIcon } from '@heroicons/react/24/outline'
 
 /**
@@ -9,8 +10,16 @@ import { ClockIcon } from '@heroicons/react/24/outline'
 const WantToBuyCard = ({
   request,
   className = '',
+  disableClick = false,
   ...props
 }) => {
+  const navigate = useNavigate()
+
+  const handleCardClick = () => {
+    if (!disableClick && request.id) {
+      navigate(`/account/want-to-buy/${request.id}`)
+    }
+  }
   const {
     equipmentName,
     tags = [],
@@ -62,7 +71,11 @@ const WantToBuyCard = ({
   const priceInfo = parsePriceLimit(priceLimit)
 
   return (
-    <div className={`bg-white rounded-[12px] p-3 sm:p-4 border border-[#E8EBEB] hover:shadow-md transition-shadow ${className}`} {...props}>
+    <div 
+      className={`bg-white rounded-[12px] p-3 sm:p-4 border border-[#E8EBEB] transition-shadow ${disableClick ? '' : 'hover:shadow-md cursor-pointer'} ${className}`} 
+      onClick={handleCardClick}
+      {...props}
+    >
       {/* Equipment Name, Tags, and Price on Same Line */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
         {/* Left: Equipment Name and Tags */}

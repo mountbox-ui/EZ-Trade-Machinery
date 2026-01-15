@@ -19,7 +19,28 @@ const WantToBuyContent = ({ className = '' }) => {
       offersCount: 3,
       priceLimit: '$150,000 Price Limit',
       views: 45,
-      expiresDate: '20/12/2025'
+      expiresDate: '20/12/2026',
+      postedDate: '20/11/2005',
+      responses: [
+        {
+          id: 1,
+          userName: 'Mike Johnson',
+          userAvatar: null,
+          timeAgo: '5 hours ago',
+          equipmentName: '2019 Caterpillar 320 Excavator',
+          description: 'I have exactly what you are looking for. Equipment is in excellent condition with only 2500 hours.',
+          price: '$145,000'
+        },
+        {
+          id: 2,
+          userName: 'Mike Johnson',
+          userAvatar: null,
+          timeAgo: '5 hours ago',
+          equipmentName: '2019 Caterpillar 320 Excavator',
+          description: 'I have exactly what you are looking for. Equipment is in excellent condition with only 2500 hours.',
+          price: '$145,000'
+        }
+      ]
     },
     {
       id: 2,
@@ -33,7 +54,9 @@ const WantToBuyContent = ({ className = '' }) => {
       offersCount: 2,
       priceLimit: '$150,000 Price Limit',
       views: 45,
-      expiresDate: '20/12/2025'
+      expiresDate: '20/12/2026',
+      postedDate: '20/11/2005',
+      responses: []
     },
     {
       id: 3,
@@ -47,7 +70,9 @@ const WantToBuyContent = ({ className = '' }) => {
       offersCount: 5,
       priceLimit: '$150,000 Price Limit',
       views: 45,
-      expiresDate: '20/12/2025'
+      expiresDate: '20/12/2026',
+      postedDate: '20/11/2005',
+      responses: []
     },
     {
       id: 4,
@@ -61,7 +86,9 @@ const WantToBuyContent = ({ className = '' }) => {
       offersCount: 1,
       priceLimit: '$150,000 Price Limit',
       views: 45,
-      expiresDate: '20/12/2025'
+      expiresDate: '20/12/2026',
+      postedDate: '20/11/2005',
+      responses: []
     }
   ]
 
