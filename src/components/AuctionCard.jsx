@@ -1,15 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import clockSm from '../assets/Auction-Img/Clock_SM.svg'
 import Button from './Button'
 
 const AuctionCard = ({ item }) => {
-    // Mock navigate function since react-router-dom is not set up yet
-    const navigate = (path) => {
-        console.log(`Navigating to: ${path}`)
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/equipment/${item.id}`)
     }
 
     return (
-        <div key={item.id} className="flex flex-col gap-3 min-w-[250px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink md:b-card-hover h-full hover:b-card-hover-none">
+        <div key={item.id} className="flex flex-col gap-3 min-w-[250px] sm:min-w-[320px] lg:min-w-0 shrink-0 lg:shrink md:b-card-hover h-full hover:b-card-hover-none cursor-pointer" onClick={handleClick}>
             <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 group">
                 <img
                     src={item.image}
@@ -50,7 +52,10 @@ const AuctionCard = ({ item }) => {
             <Button
                 variant="secondary"
                 className="w-full"
-                onClick={() => navigate(`/auction/${item.id}`)}
+                onClick={(e) => {
+                    e.stopPropagation()
+                    navigate(`/equipment/${item.id}`)
+                }}
             >
                 <span className="font-bold">Place bid</span>
             </Button>

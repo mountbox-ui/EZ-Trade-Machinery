@@ -1,9 +1,16 @@
 import React from 'react'
-import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
+import { useNavigate } from 'react-router-dom'
+import EllipseIcon from '../../assets/social_media_icons/Ellipse.svg'
 
 const EquipmentCard = ({ item }) => {
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/equipment/${item.id}`)
+    }
+
     return (
-        <div className="group md:b-card-hover hover:b-card-hover-none">
+        <div className="group md:b-card-hover hover:b-card-hover-none cursor-pointer" onClick={handleClick}>
             <div className="relative rounded-[8px] overflow-hidden mb-3">
                 <img
                     src={item.image || item.img}

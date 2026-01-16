@@ -5,7 +5,7 @@ import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Volvo from '../assets/Auction-Img/Volvo_EEC380.jpg'
 import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
 import HeartIcon from '../assets/social_media_icons/heart.svg'
-import RecommendationCard from './RecommendationCard'
+import RecommendationCard from './equipment/RecommendationCard'
 
 const YouMayAlsoLike = () => {
   const items = [

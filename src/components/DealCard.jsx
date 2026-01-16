@@ -1,14 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from './Button'
 
 const DealCard = ({ deal }) => {
-    // Mock navigate function since react-router-dom is not set up yet
-    const navigate = (path) => {
-        console.log(`Navigating to: ${path}`)
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/equipment/${deal.id}`)
     }
 
     return (
-        <div className="group md:b-card-hover hover:b-card-hover-none flex flex-col h-full">
+        <div className="group md:b-card-hover hover:b-card-hover-none flex flex-col h-full cursor-pointer" onClick={handleClick}>
             <div className="relative aspect-[163/194] xl:aspect-[4/3] rounded-[8px] overflow-hidden bg-gray-100 mb-3">
                 <img
                     src={deal.img || deal.image}

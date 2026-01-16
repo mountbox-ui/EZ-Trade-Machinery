@@ -1,9 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
 
 const NewListingCard = ({ listing }) => {
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/equipment/${listing.id}`)
+    }
+
     return (
-        <div className="group flex items-start gap-4 md:b-card-hover hover:b-card-hover-none">
+        <div className="group flex items-start gap-4 md:b-card-hover hover:b-card-hover-none cursor-pointer" onClick={handleClick}>
             <div className="relative rounded-[8px] overflow-hidden flex-shrink-0">
                 <img
                     src={listing.image || listing.img}

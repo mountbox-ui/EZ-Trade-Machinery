@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import MobileBottomNav from '../components/MobileBottomNav'
@@ -29,7 +30,8 @@ const mockListings = [
     image: Caterpillar,
     sellerName: 'XYZ Equipment',
     hoursUsed: 2800,
-    variant: 'default'
+    variant: 'default',
+    isNegotiable: true
   },
   {
     id: 3,
@@ -53,7 +55,8 @@ const mockListings = [
     image: Caterpillar,
     sellerName: 'Construction Supplies',
     hoursUsed: 4200,
-    variant: 'default'
+    variant: 'default',
+    isNegotiable: true
   },
   {
     id: 5,
@@ -154,6 +157,7 @@ const mockListings = [
 ]
 
 const Listing = () => {
+  const navigate = useNavigate()
   const [filters, setFilters] = useState({
     category: [],
     condition: [],
@@ -178,7 +182,7 @@ const Listing = () => {
 
   const handleCardClick = (listing) => {
     // Navigate to listing detail page
-    console.log('Clicked listing:', listing)
+    navigate(`/equipment/${listing.id}`)
   }
 
   const handleWishlistToggle = (listingId, isFavorite) => {

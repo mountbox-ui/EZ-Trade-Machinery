@@ -5,7 +5,7 @@ import Caterpillar from '../assets/Auction-Img/Caterpillar_D6N.jpg'
 import Volvo from '../assets/Auction-Img/Volvo_EEC380.jpg'
 import EllipseIcon from '../assets/social_media_icons/Ellipse.svg'
 import StarIcon from '../assets/social_media_icons/star.png'
-import EquipmentCard from './EquipmentCard'
+import EquipmentCard from './equipment/EquipmentCard'
 
 const EquipmentForYou = () => {
   const items = [

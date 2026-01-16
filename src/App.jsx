@@ -20,6 +20,8 @@ import TermsAndConditions from './pages/TermsAndConditions'
 import Chat from './pages/Chat'
 import Listing from './pages/Listing'
 import MyStore from './pages/MyStore'
+import EquipmentDetail from './pages/EquipmentDetail'
+import SellEquipment from './pages/SellEquipment'
 
 function App() {
   const navLinks = [
@@ -70,7 +72,9 @@ function App() {
           <Route path="/account/terms" element={<TermsAndConditions />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/listings" element={<Listing />} />
+          <Route path="/equipment/:id" element={<EquipmentDetail />} />
           <Route path="/store" element={<MyStore />} />
+          <Route path="/sell-equipment" element={<SellEquipment />} />
         </Routes>
       </div>
     </Router>
