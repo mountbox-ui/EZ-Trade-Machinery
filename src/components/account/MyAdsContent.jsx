@@ -15,7 +15,7 @@ const MyAdsContent = ({ className = '' }) => {
   ]
 
   // Sample ads data for My Ads
-  const ads = [
+  const initialAds = [
     {
       id: 1,
       title: 'Caterpillar 320D Excavator',
@@ -24,7 +24,8 @@ const MyAdsContent = ({ className = '' }) => {
       location: 'California, USA',
       price: '120,000',
       image: Caterpillar,
-      sellerName: 'Abc seller'
+      sellerName: 'Abc seller',
+      isFavorite: false
     },
     {
       id: 2,
@@ -34,7 +35,8 @@ const MyAdsContent = ({ className = '' }) => {
       location: 'Florida, USA',
       price: '150,000',
       image: Komatsu,
-      sellerName: 'Abc seller'
+      sellerName: 'Abc seller',
+      isFavorite: false
     },
     {
       id: 3,
@@ -44,9 +46,23 @@ const MyAdsContent = ({ className = '' }) => {
       location: 'New York, USA',
       price: '45,000',
       image: JohnDeere,
-      sellerName: 'Abc seller'
+      sellerName: 'Abc seller',
+      isFavorite: false
     }
   ]
+
+  const [ads, setAds] = useState(initialAds.map(ad => ({ ...ad, isFavorite: ad.isFavorite || false })))
+
+  const handleWishlistToggle = (listingId, isFavorite) => {
+    // Update favorite status
+    setAds(prevAds =>
+      prevAds.map(ad =>
+        ad.id === listingId ? { ...ad, isFavorite } : ad
+      )
+    )
+    // In a real app, you would make an API call here to save the favorite status
+    console.log('Wishlist toggled:', listingId, isFavorite)
+  }
 
   return (
     <div className={className}>
@@ -89,6 +105,7 @@ const MyAdsContent = ({ className = '' }) => {
               listing={ad}
               variant="default"
               isNegotiable={index === 1}
+              onWishlistToggle={handleWishlistToggle}
             />
           ))}
         </div>

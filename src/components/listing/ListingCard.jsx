@@ -1,4 +1,5 @@
 import React from 'react'
+import FavoriteIcon from '../FavoriteIcon'
 import EllipseIcon from '../../assets/social_media_icons/Ellipse.svg'
 
 /**
@@ -14,8 +15,19 @@ const ListingCard = ({
   listing,
   variant = 'default',
   className = '',
+  onWishlistToggle,
+  onClick,
   ...props
 }) => {
+  const isFavorite = listing?.isFavorite || false
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation() // Prevent card click from triggering
+    const newFavoriteState = !isFavorite
+    if (onWishlistToggle) {
+      onWishlistToggle(listing.id, newFavoriteState)
+    }
+  }
 
   const variants = {
     default: 'bg-[#F9FAFB]',
@@ -48,7 +60,7 @@ const ListingCard = ({
     : 'AS'
 
   return (
-    <div className={containerClasses} {...props}>
+    <div className={containerClasses} onClick={onClick} {...props}>
       {/* Seller header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -76,6 +88,19 @@ const ListingCard = ({
             className="w-full h-full object-cover aspect-[4/3] rounded-[8px] transition-transform duration-300 group-hover:scale-105"
           />
         )}
+        
+        {/* Favorite Icon - Always visible, toggles between outline and filled */}
+        <button
+          type="button"
+          onClick={handleFavoriteClick}
+          className="absolute top-2 right-3 z-20 p-2 hover:bg-white rounded-full transition-all duration-200 hover:scale-110"
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          <FavoriteIcon 
+            isFavorite={isFavorite}
+            showDropShadow={true}
+          />
+        </button>
         
         {/* Sold Badge */}
         {variant === 'sold' && (

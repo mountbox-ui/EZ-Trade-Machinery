@@ -1,6 +1,6 @@
 import React from 'react'
+import FavoriteIcon from '../FavoriteIcon'
 import EllipseIcon from '../../assets/social_media_icons/Ellipse.svg'
-import favoritesIcon from '../../assets/Nav-Icons/FavoritesS.svg'
 
 /**
  * Reusable card for "My Ads" listings matching the account design.
@@ -15,8 +15,18 @@ const MyAdsCard = ({
   variant = 'default',
   isNegotiable = false,
   className = '',
+  onWishlistToggle,
   ...props
 }) => {
+  const isFavorite = listing?.isFavorite || false
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation() // Prevent card click from triggering
+    const newFavoriteState = !isFavorite
+    if (onWishlistToggle) {
+      onWishlistToggle(listing.id, newFavoriteState)
+    }
+  }
   const variants = {
     default: 'bg-white',
     highlighted: 'bg-white',
@@ -64,7 +74,7 @@ const MyAdsCard = ({
         </div>
       </div>
 
-      {/* Image with favorite icon */}
+      {/* Image */}
       <div className="relative rounded-[8px] overflow-hidden mb-3">
         {image && (
           <img
@@ -73,11 +83,18 @@ const MyAdsCard = ({
             className="w-full h-full object-cover aspect-[4/3] rounded-[8px]"
           />
         )}
+        
+        {/* Favorite Icon - Always visible, toggles between outline and filled */}
         <button
           type="button"
-          className="absolute top-3 right-3 w-[33px] h-[33px]  flex items-center justify-center]"
+          onClick={handleFavoriteClick}
+          className="absolute top-2 right-3 z-20 p-2 hover:bg-white rounded-full transition-all duration-200 hover:scale-110"
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         >
-          <img src={favoritesIcon} alt="Favorite" className="w-[22px] h-[22px]" />
+          <FavoriteIcon 
+            isFavorite={isFavorite}
+            showDropShadow={true}
+          />
         </button>
       </div>
 

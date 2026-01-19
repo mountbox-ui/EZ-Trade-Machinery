@@ -18,7 +18,8 @@ const mockListings = [
     image: Caterpillar,
     sellerName: 'ABC',
     hoursUsed: 3500,
-    variant: 'default'
+    variant: 'default',
+    isFavorite: true
   },
   {
     id: 2,
@@ -56,7 +57,8 @@ const mockListings = [
     sellerName: 'Construction Supplies',
     hoursUsed: 4200,
     variant: 'default',
-    isNegotiable: true
+    isNegotiable: true,
+    isFavorite: true
   },
   {
     id: 5,
@@ -80,7 +82,8 @@ const mockListings = [
     image: Caterpillar,
     sellerName: 'XYZ Equipment',
     hoursUsed: 2800,
-    variant: 'default'
+    variant: 'default',
+    isFavorite: true
   },
   {
     id: 7,
@@ -104,7 +107,8 @@ const mockListings = [
     image: Caterpillar,
     sellerName: 'Construction Supplies',
     hoursUsed: 4200,
-    variant: 'default'
+    variant: 'default',
+    isFavorite: true
   },
   {
     id: 9,
@@ -167,7 +171,7 @@ const Listing = () => {
     location: [],
     hoursUsed: [0, 10000]
   })
-  const [listings] = useState(mockListings)
+  const [listings, setListings] = useState(mockListings.map(listing => ({ ...listing, isFavorite: listing.isFavorite || false })))
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false)
 
   const handleFilterChange = (newFilters) => {
@@ -187,6 +191,12 @@ const Listing = () => {
 
   const handleWishlistToggle = (listingId, isFavorite) => {
     // Update favorite status
+    setListings(prevListings =>
+      prevListings.map(listing =>
+        listing.id === listingId ? { ...listing, isFavorite } : listing
+      )
+    )
+    // In a real app, you would make an API call here to save the favorite status
     console.log('Wishlist toggled:', listingId, isFavorite)
   }
 
