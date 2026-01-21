@@ -22,6 +22,7 @@ import Listing from './pages/Listing'
 import MyStore from './pages/MyStore'
 import EquipmentDetail from './pages/EquipmentDetail'
 import SellEquipment from './pages/SellEquipment'
+import Feed from './pages/Feed'
 
 function App() {
   const navLinks = [
@@ -75,6 +76,7 @@ function App() {
           <Route path="/equipment/:id" element={<EquipmentDetail />} />
           <Route path="/store" element={<MyStore />} />
           <Route path="/sell-equipment" element={<SellEquipment />} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
       </div>
     </Router>
