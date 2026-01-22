@@ -17,6 +17,7 @@ import PostWantToBuy from './pages/PostWantToBuy'
 import Notifications from './pages/Notifications'
 import ChangePassword from './pages/ChangePassword'
 import TermsAndConditions from './pages/TermsAndConditions'
+import HelpAndSupport from './pages/HelpAndSupport'
 import Chat from './pages/Chat'
 import Listing from './pages/Listing'
 import MyStore from './pages/MyStore'
@@ -71,6 +72,7 @@ function App() {
           <Route path="/account/notifications" element={<Notifications />} />
           <Route path="/account/change-password" element={<ChangePassword />} />
           <Route path="/account/terms" element={<TermsAndConditions />} />
+          <Route path="/account/help" element={<HelpAndSupport />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/listings" element={<Listing />} />
           <Route path="/equipment/:id" element={<EquipmentDetail />} />
